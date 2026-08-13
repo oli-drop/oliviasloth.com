@@ -1,0 +1,278 @@
+---
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Stories — Olivia Sloth</title>
+	</head>
+
+	<body>
+		<header>
+			<a class="name" href="/">OLIVIA SLOTH</a>
+
+			<nav>
+				<a class="active" href="/stories">Stories</a>
+				<a href="/talks">Talks</a>
+				<a href="/about">About</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="heading">
+				<p class="eyebrow">FROM THE ROAD</p>
+				<h1>Stories</h1>
+
+				<p class="intro">
+					Stories about the people I meet, the places I stay
+					and the questions that follow me home.
+				</p>
+			</section>
+
+			<section class="stories">
+
+				<a class="story story-large" href="/stories/laughing-in-aleppo">
+					<div class="image">
+						<img src="/stories/fugl.jpg" alt="Aleppo" />
+					</div>
+
+					<div class="story-info">
+						<p>SYRIA</p>
+						<h2>Laughing in Aleppo</h2>
+						<span>On normality amid rockets →</span>
+					</div>
+				</a>
+
+
+				<a class="story" href="/stories/latakia">
+					<div class="image">
+						<img src="/stories/hama.jpg" alt="Latakia" />
+					</div>
+
+					<div class="story-info">
+						<p>SYRIA</p>
+						<h2>On a rooftop in Latakia</h2>
+						<span>Read story →</span>
+					</div>
+				</a>
+
+
+				<a class="story" href="/stories/what-do-your-parents-think">
+					<div class="image">
+						<img src="/stories/Syria_sunset.jpg" alt="Travelling" />
+					</div>
+
+					<div class="story-info">
+						<p>ON TRAVEL</p>
+						<h2>What do your parents think?</h2>
+                        <p class="subtitle">
+	                	    About adventure, family and the parts of ourselves we’re expected to outgrow
+	                    </p>
+						<span>Read story →</span>
+					</div>
+				</a>
+
+			</section>
+		</main>
+	</body>
+</html>
+
+
+<style>
+	* {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		background: #f4f1ea;
+		color: #171717;
+		font-family: Arial, sans-serif;
+	}
+
+	header {
+		width: 100%;
+		padding: 30px 48px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.name {
+		font-size: 22px;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+	}
+
+	nav {
+		display: flex;
+		gap: 32px;
+	}
+
+	nav a {
+		font-size: 15px;
+	}
+
+	nav .active {
+		border-bottom: 1px solid #171717;
+	}
+
+	main {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 80px 48px 140px;
+	}
+
+	.heading {
+		max-width: 900px;
+		margin-bottom: 110px;
+	}
+
+	.eyebrow {
+		font-size: 12px;
+		letter-spacing: 0.18em;
+		margin: 0 0 24px;
+	}
+
+	h1 {
+		font-family: Georgia, serif;
+		font-size: clamp(70px, 11vw, 160px);
+		font-weight: 400;
+		line-height: 0.85;
+		margin: 0 0 55px;
+		letter-spacing: -0.04em;
+	}
+
+	.intro {
+		max-width: 680px;
+		font-family: Georgia, serif;
+		font-size: clamp(24px, 3vw, 38px);
+		line-height: 1.3;
+		margin: 0;
+	}
+
+	.stories {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 100px 40px;
+	}
+
+	.story-large {
+		grid-column: 1 / -1;
+	}
+
+	.image {
+		width: 100%;
+		overflow: hidden;
+		background: #ddd;
+	}
+
+	.story-large .image {
+		aspect-ratio: 16 / 8;
+	}
+
+	.story:not(.story-large) .image {
+		aspect-ratio: 4 / 3;
+	}
+
+	.image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: transform 0.6s ease;
+	}
+
+	.story:hover img {
+		transform: scale(1.025);
+	}
+
+	.story-info {
+		padding-top: 22px;
+	}
+
+	.story-info p {
+		font-size: 11px;
+		letter-spacing: 0.16em;
+		margin: 0 0 12px;
+	}
+
+	.story-info h2 {
+		font-family: Georgia, serif;
+		font-size: clamp(28px, 3vw, 46px);
+		font-weight: 400;
+		line-height: 1.05;
+		margin: 0 0 14px;
+	}
+
+	.story-info span {
+		font-size: 14px;
+	}
+    .subtitle {
+        font-family: Georgia, serif;
+        font-size: 18px;
+        line-height: 1.4;
+        color: #666;
+        margin: 8px 0 20px;
+    }
+
+    .read-more {
+        font-size: 14px;
+    }
+	@media (max-width: 700px) {
+		header {
+			padding: 24px 20px;
+		}
+
+		.name {
+			font-size: 17px;
+		}
+
+		nav {
+			gap: 14px;
+		}
+
+		nav a {
+			font-size: 13px;
+		}
+
+		main {
+			padding: 60px 20px 100px;
+		}
+
+		.heading {
+			margin-bottom: 70px;
+		}
+
+		h1 {
+			font-size: 72px;
+			margin-bottom: 35px;
+		}
+
+		.intro {
+			font-size: 25px;
+		}
+
+		.stories {
+			grid-template-columns: 1fr;
+			gap: 65px;
+		}
+
+		.story-large {
+			grid-column: auto;
+		}
+
+		.story-large .image,
+		.story:not(.story-large) .image {
+			aspect-ratio: 4 / 3;
+		}
+	}
+</style>
