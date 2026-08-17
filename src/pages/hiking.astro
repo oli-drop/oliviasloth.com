@@ -1,0 +1,265 @@
+---
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Hiking — Olivia Fjord Sloth</title>
+	</head>
+
+	<body>
+		<header>
+			<a class="name" href="/">OLIVIA FJORD SLOTH</a>
+
+			<nav>
+				<a href="/stories">Stories</a>
+				<a class="active" href="/hiking">Hiking</a>
+				<a href="/talks">Talks</a>
+				<a href="/about">About</a>
+			</nav>
+		</header>
+
+		<main>
+
+			<section class="hero">
+				<p class="eyebrow">HIKING</p>
+
+				<h1>Notes from the trail.</h1>
+
+				<p class="intro">
+					Routes I’ve walked, GPX files, food, planning and the things
+					I’ve learned by actually being out there.
+				</p>
+			</section>
+
+
+			<section class="guide-grid">
+
+				<a class="guide-card" href="/hiking/trails">
+					<img src="/hiking/trails.jpg" alt="Mountain hiking trail" />
+
+					<div class="guide-content">
+						<p class="label">ROUTES</p>
+						<h2>Trails I’ve walked</h2>
+						<p>
+							Routes, GPX files and my own notes from hikes in places
+							like Kyrgyzstan, Tajikistan and Iran.
+						</p>
+						<span>Explore trails →</span>
+					</div>
+				</a>
+
+
+				<a class="guide-card" href="/hiking/food">
+					<img src="/hiking/food.jpg" alt="Food for hiking" />
+
+					<div class="guide-content">
+						<p class="label">TRAIL FOOD</p>
+						<h2>What I eat on long hikes</h2>
+						<p>
+							Dehydrated meals, what works for me and what I actually
+							carry when I’m out for several days.
+						</p>
+						<span>Trail food →</span>
+					</div>
+				</a>
+
+
+				<a class="guide-card" href="/hiking/planning">
+					<img src="/hiking/planing.jpg" alt="Map and hiking planning" />
+
+					<div class="guide-content">
+                        <p class="label">PLANNING & GEAR</p>
+
+                        <h2>Things I wish I knew</h2>
+
+                        <p>
+                            Gear, packing, planning and some of the things
+                            I learned the slow way.
+                        </p>
+
+                        <span>Read my notes →</span>
+					</div>
+				</a>
+
+			</section>
+
+		</main>
+	</body>
+</html>
+
+
+<style>
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		background: #f4f1ea;
+		color: #171717;
+	}
+
+	body {
+		font-family: Arial, sans-serif;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	header {
+		padding: 30px 48px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.name {
+		font-size: 22px;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+	}
+
+	nav {
+		display: flex;
+		gap: 28px;
+	}
+
+	nav a {
+		font-size: 15px;
+	}
+
+	nav .active {
+		border-bottom: 1px solid #171717;
+	}
+
+	.hero {
+		max-width: 1200px;
+		margin: 100px auto 100px;
+		padding: 0 48px;
+	}
+
+	.eyebrow,
+	.label {
+		margin: 0 0 20px;
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.18em;
+	}
+
+	h1 {
+		margin: 0;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(70px, 9vw, 130px);
+		font-weight: 400;
+		line-height: 0.92;
+		letter-spacing: -0.04em;
+	}
+
+	.intro {
+		max-width: 720px;
+		margin: 40px 0 0;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(23px, 2.6vw, 34px);
+		line-height: 1.4;
+		color: #555;
+	}
+
+	.guide-grid {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: 0 48px 130px;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 35px;
+	}
+
+	.guide-card img {
+		display: block;
+		width: 100%;
+		aspect-ratio: 4 / 5;
+		object-fit: cover;
+	}
+
+	.guide-content {
+		padding-top: 22px;
+	}
+
+	.guide-content h2 {
+		margin: 0 0 14px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 34px;
+		font-weight: 400;
+		line-height: 1.05;
+	}
+
+	.guide-content > p:not(.label) {
+		margin: 0 0 18px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 17px;
+		line-height: 1.55;
+		color: #555;
+	}
+
+	.guide-content span {
+		display: inline-block;
+		font-size: 13px;
+		font-weight: 700;
+		border-bottom: 1px solid #171717;
+		padding-bottom: 3px;
+	}
+
+	.guide-card:hover img {
+		opacity: 0.93;
+	}
+
+	@media (max-width: 800px) {
+
+		header {
+			padding: 24px 20px;
+		}
+
+		.name {
+			font-size: 17px;
+		}
+
+		nav {
+			gap: 12px;
+		}
+
+		nav a {
+			font-size: 12px;
+		}
+
+		.hero {
+			margin: 60px auto 70px;
+			padding: 0 24px;
+		}
+
+		h1 {
+			font-size: 62px;
+		}
+
+		.intro {
+			font-size: 22px;
+		}
+
+		.guide-grid {
+			grid-template-columns: 1fr;
+			padding: 0 24px 90px;
+			gap: 70px;
+		}
+
+		.guide-card img {
+			aspect-ratio: 4 / 3;
+		}
+	}
+
+</style>
