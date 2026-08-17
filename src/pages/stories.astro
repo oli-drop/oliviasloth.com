@@ -20,65 +20,127 @@
 		</header>
 
 		<main>
-			<section class="heading">
+
+			<!-- PAGE INTRO -->
+
+			<section class="page-intro">
 				<p class="eyebrow">FROM THE ROAD</p>
+
 				<h1>Stories</h1>
 
-				<p class="intro">
+				<p class="intro-text">
 					Stories about people, places and questions I don’t have easy answers to.
 				</p>
 			</section>
 
-			<section class="stories">
 
-				<a class="story story-large" href="/stories/laughing-in-aleppo">
-					<div class="image">
-						<img src="/stories/Syria_sunset.jpg" alt="Aleppo" />
+			<!-- LATEST STORY -->
+
+			<section class="featured-story">
+				<a href="/stories/what-do-your-parents-think">
+
+					<div class="featured-image">
+						<img
+							src="/stories/hama2.jpg"
+							alt="Olivia in the mountains at sunset"
+						/>
 					</div>
 
-					<div class="story-info">
-						<p>SYRIA</p>
-						<h2>Blablabla</h2>
-						<span>On normality amid rockets →</span>
+					<div class="featured-text">
+						<p class="story-meta">
+							LATEST STORY · PERSONAL ESSAY
+						</p>
+
+						<h2>
+							What do your parents think?
+						</h2>
+
+						<p class="description">
+							About adventure, family and the parts of ourselves
+							we’re expected to outgrow.
+						</p>
+
+						<span class="read-link">
+							Read story →
+						</span>
 					</div>
+
 				</a>
+			</section>
 
 
-				<a class="story" href="/stories/latakia">
-					<div class="image">
-						<img src="/stories/hama.jpg" alt="Latakia" />
-					</div>
+			<!-- OLDER STORIES -->
 
-					<div class="story-info">
-						<p>SYRIA</p>
-						<h2>blablabla</h2>
-						<span>Read story →</span>
-					</div>
-				</a>
+			<section class="story-grid">
+
+				<article class="story-card">
+					<a href="/stories/i-dont-have-a-plan">
+
+						<img
+							src="/stories/profil.jpg"
+							alt="Olivia hiking"
+						/>
+
+						<p class="story-meta">
+							PERSONAL ESSAY
+						</p>
+
+						<h3>
+							I don’t have a plan
+						</h3>
+
+						<p class="description">
+							In a few weeks, I’m leaving my job and flying to Syria
+							on a one-way ticket.
+						</p>
+
+						<span class="read-link">
+							Read story →
+						</span>
+
+					</a>
+				</article>
 
 
-				<a class="story" href="/stories/what-do-your-parents-think">
-					<div class="image">
-						<img src="/stories/hama2.jpg" alt="Travelling" />
-					</div>
+				<article class="story-card">
+					<a href="/stories/the-big-why">
 
-					<div class="story-info">
-						<p>PERSONAL ESSAY</p>
-						<h2>What do your parents think?</h2>
-                        <p class="subtitle">
-	                	    About adventure, family and the parts of ourselves we’re expected to outgrow
-	                    </p>
-						<span>Read story →</span>
-					</div>
-				</a>
+						<img
+							src="/stories/hama.jpg"
+							alt="Ancient ruins in Syria"
+						/>
+
+						<p class="story-meta">
+							SYRIA · OCTOBER 2025
+						</p>
+
+						<h3>
+							The big why
+						</h3>
+
+						<p class="description">
+							My first journey through Syria — on foot, through mountains,
+							caves and a country I knew mostly from the headlines.
+						</p>
+
+						<span class="read-link">
+							Read story →
+						</span>
+
+					</a>
+				</article>
 
 			</section>
+
 		</main>
 	</body>
 </html>
 
 
 <style>
+
+	/* GENERAL */
+
 	* {
 		box-sizing: border-box;
 	}
@@ -89,20 +151,26 @@
 		padding: 0;
 		background: #f4f1ea;
 		color: #171717;
-		font-family: Arial, sans-serif;
 	}
 
-	header {
-		width: 100%;
-		padding: 30px 48px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+	body {
+		font-family: Arial, sans-serif;
 	}
 
 	a {
 		color: inherit;
 		text-decoration: none;
+	}
+
+
+	/* HEADER */
+
+	header {
+		padding: 30px 48px;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	.name {
@@ -124,109 +192,164 @@
 		border-bottom: 1px solid #171717;
 	}
 
-	main {
-		max-width: 1400px;
-		margin: 0 auto;
-		padding: 80px 48px 140px;
-	}
 
-	.heading {
-		max-width: 900px;
-		margin-bottom: 110px;
+	/* PAGE INTRO */
+
+	.page-intro {
+		max-width: 1200px;
+		margin: 80px auto 90px;
+		padding: 0 48px;
 	}
 
 	.eyebrow {
-		font-size: 12px;
+		margin: 0 0 20px;
+
+		font-size: 11px;
+		font-weight: 700;
 		letter-spacing: 0.18em;
-		margin: 0 0 24px;
 	}
 
 	h1 {
-		font-family: Georgia, serif;
-		font-size: clamp(70px, 11vw, 160px);
-		font-weight: 400;
-		line-height: 0.85;
-		margin: 0 0 55px;
-		letter-spacing: -0.04em;
-	}
-
-	.intro {
-		max-width: 680px;
-		font-family: Georgia, serif;
-		font-size: clamp(24px, 3vw, 38px);
-		line-height: 1.3;
 		margin: 0;
-	}
 
-	.stories {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 100px 40px;
-	}
-
-	.story-large {
-		grid-column: 1 / -1;
-	}
-
-	.image {
-		width: 100%;
-		overflow: hidden;
-		background: #ddd;
-	}
-
-	.story-large .image {
-		aspect-ratio: 16 / 8;
-	}
-
-	.story:not(.story-large) .image {
-		aspect-ratio: 4 / 3;
-	}
-
-	.image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		display: block;
-		transition: transform 0.6s ease;
-	}
-
-	.story:hover img {
-		transform: scale(1.025);
-	}
-
-	.story-info {
-		padding-top: 22px;
-	}
-
-	.story-info p {
-		font-size: 11px;
-		letter-spacing: 0.16em;
-		margin: 0 0 12px;
-	}
-
-	.story-info h2 {
-		font-family: Georgia, serif;
-		font-size: clamp(28px, 3vw, 46px);
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(72px, 9vw, 130px);
 		font-weight: 400;
-		line-height: 1.05;
-		margin: 0 0 14px;
+		line-height: 0.9;
+		letter-spacing: -0.045em;
 	}
 
-	.story-info span {
-		font-size: 14px;
-	}
-    .subtitle {
-        font-family: Georgia, serif;
-        font-size: 18px;
-        line-height: 1.4;
-        color: #666;
-        margin: 8px 0 20px;
-    }
+	.intro-text {
+		max-width: 520px;
+		margin: 35px 0 0;
 
-    .read-more {
-        font-size: 14px;
-    }
-	@media (max-width: 700px) {
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 25px;
+		line-height: 1.4;
+	}
+
+
+	/* FEATURED STORY */
+
+	.featured-story {
+		max-width: 1200px;
+		margin: 0 auto 120px;
+		padding: 0 48px;
+	}
+
+	.featured-story > a {
+		display: grid;
+		grid-template-columns: 1.35fr 0.85fr;
+		gap: 65px;
+		align-items: center;
+	}
+
+	.featured-image img {
+		width: 100%;
+		display: block;
+
+		aspect-ratio: 16 / 10;
+		object-fit: cover;
+	}
+
+	.featured-text {
+		max-width: 500px;
+	}
+
+	.story-meta {
+		margin: 0 0 15px;
+
+		font-size: 10px;
+		font-weight: 700;
+		letter-spacing: 0.16em;
+	}
+
+	.featured-text h2 {
+		margin: 0 0 24px;
+
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: clamp(44px, 5vw, 72px);
+		font-weight: 400;
+		line-height: 1;
+		letter-spacing: -0.025em;
+	}
+
+	.description {
+		margin: 0 0 24px;
+
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 18px;
+		line-height: 1.5;
+		color: #555;
+	}
+
+	.read-link {
+		display: inline-block;
+
+		font-size: 13px;
+		font-weight: 700;
+
+		padding-bottom: 3px;
+		border-bottom: 1px solid #171717;
+	}
+
+
+	/* STORY GRID */
+
+	.story-grid {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 48px 130px;
+
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 45px;
+	}
+
+	.story-card img {
+		width: 100%;
+		display: block;
+
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+
+		margin-bottom: 18px;
+	}
+
+	.story-card h3 {
+		margin: 0 0 12px;
+
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 1.1;
+		letter-spacing: -0.015em;
+	}
+
+	.story-card .description {
+		max-width: 480px;
+		font-size: 15px;
+		margin-bottom: 18px;
+	}
+
+
+	/* LITTLE HOVER EFFECT */
+
+	.featured-story a:hover img,
+	.story-card a:hover img {
+		opacity: 0.93;
+	}
+
+	.featured-story a:hover .read-link,
+	.story-card a:hover .read-link {
+		opacity: 0.6;
+	}
+
+
+	/* MOBILE */
+
+	@media (max-width: 800px) {
+
 		header {
 			padding: 24px 20px;
 		}
@@ -243,35 +366,49 @@
 			font-size: 13px;
 		}
 
-		main {
-			padding: 60px 20px 100px;
-		}
 
-		.heading {
-			margin-bottom: 70px;
+		.page-intro {
+			margin: 55px auto 65px;
+			padding: 0 24px;
 		}
 
 		h1 {
-			font-size: 72px;
-			margin-bottom: 35px;
+			font-size: 68px;
 		}
 
-		.intro {
-			font-size: 25px;
+		.intro-text {
+			font-size: 21px;
 		}
 
-		.stories {
+
+		.featured-story {
+			margin-bottom: 90px;
+			padding: 0 24px;
+		}
+
+		.featured-story > a {
 			grid-template-columns: 1fr;
-			gap: 65px;
+			gap: 32px;
 		}
 
-		.story-large {
-			grid-column: auto;
+		.featured-text h2 {
+			font-size: 46px;
 		}
 
-		.story-large .image,
-		.story:not(.story-large) .image {
-			aspect-ratio: 4 / 3;
+		.featured-text .description {
+			font-size: 18px;
+		}
+
+
+		.story-grid {
+			padding: 0 24px 90px;
+			grid-template-columns: 1fr;
+			gap: 70px;
+		}
+
+		.story-card h3 {
+			font-size: 30px;
 		}
 	}
+
 </style>
