@@ -1,5 +1,7 @@
 ---
-import SocialLinks from "../../components/SocialLinks.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+return Astro.redirect("/stories/what-do-your-parents-think");
 ---
 
 <html lang="en">
@@ -11,16 +13,7 @@ import SocialLinks from "../../components/SocialLinks.astro";
 	</head>
 
 	<body>
-		<header>
-			<a class="name" href="/">OLIVIA FJORD SLOTH</a>
-
-			<nav>
-				<a href="/stories">Stories</a>
-				<a href="/talks">Talks</a>
-				<a href="/about">About</a>
-			</nav>
-			<SocialLinks />
-		</header>
+		<SiteHeader />
 
 		<main>
 			<section class="story-header">
@@ -62,6 +55,7 @@ import SocialLinks from "../../components/SocialLinks.astro";
 				<a href="/stories">← Back to stories</a>
 			</div>
 		</main>
+		<SiteFooter />
 	</body>
 </html>
 

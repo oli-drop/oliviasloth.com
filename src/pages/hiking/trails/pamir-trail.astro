@@ -1,5 +1,6 @@
 ---
-import SocialLinks from "../../../components/SocialLinks.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
 ---
 
 <html lang="en">
@@ -8,21 +9,12 @@ import SocialLinks from "../../../components/SocialLinks.astro";
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<title>Pamir Trail — Olivia Fjord Sloth</title>
+		<meta name="description" content="A practical account of hiking the Pamir Trail in Tajikistan, including route notes and lessons from the trail." />
 	</head>
 
 	<body>
 
-		<header>
-			<a class="name" href="/">OLIVIA FJORD SLOTH</a>
-
-			<nav>
-				<a href="/stories">Stories</a>
-				<a class="active" href="/hiking">Hiking</a>
-				<a href="/talks">Talks</a>
-				<a href="/about">About</a>
-			</nav>
-			<SocialLinks />
-		</header>
+		<SiteHeader />
 
 
 		<main>
@@ -247,6 +239,7 @@ import SocialLinks from "../../../components/SocialLinks.astro";
 
 		</main>
 
+		<SiteFooter />
 	</body>
 </html>
 

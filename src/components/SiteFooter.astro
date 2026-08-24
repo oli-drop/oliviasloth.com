@@ -1,0 +1,74 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+	<div>
+		<p class="footer-name">OLIVIA FJORD SLOTH</p>
+		<p class="copyright">© {year}</p>
+	</div>
+
+	<div class="footer-contact">
+		<a href="mailto:oliviasloth@hotmail.com">oliviasloth@hotmail.com</a>
+		<SocialLinks />
+	</div>
+</footer>
+
+<style>
+	.site-footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 40px;
+		padding: 42px 48px;
+		border-top: 1px solid rgba(23, 23, 23, 0.25);
+		background: #f4f1ea;
+		color: #171717;
+		font-family: Arial, sans-serif;
+	}
+
+	.site-footer p {
+		margin: 0;
+	}
+
+	.footer-name {
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+	}
+
+	.copyright {
+		margin-top: 8px !important;
+		font-size: 12px;
+		opacity: 0.65;
+	}
+
+	.footer-contact {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.footer-contact > a {
+		color: inherit;
+		font-size: 13px;
+		text-decoration: none;
+		border-bottom: 1px solid currentColor;
+		padding-bottom: 2px;
+	}
+
+	@media (max-width: 600px) {
+		.site-footer {
+			align-items: flex-start;
+			flex-direction: column;
+			padding: 36px 20px;
+		}
+
+		.footer-contact {
+			flex-wrap: wrap;
+			row-gap: 18px;
+		}
+	}
+</style>

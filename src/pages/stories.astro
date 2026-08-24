@@ -1,5 +1,6 @@
 ---
-import SocialLinks from "../components/SocialLinks.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 ---
 
 <html lang="en">
@@ -8,19 +9,11 @@ import SocialLinks from "../components/SocialLinks.astro";
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<title>Stories — Olivia Fjord Sloth</title>
+		<meta name="description" content="Personal stories from mountains, long walks and journeys beyond the familiar." />
 	</head>
 
 	<body>
-		<header>
-			<a class="name" href="/">OLIVIA FJORD SLOTH</a>
-
-			<nav>
-				<a class="active" href="/stories">Stories</a>
-				<a href="/talks">Talks</a>
-				<a href="/about">About</a>
-			</nav>
-			<SocialLinks />
-		</header>
+		<SiteHeader />
 
 		<main>
 
@@ -44,8 +37,9 @@ import SocialLinks from "../components/SocialLinks.astro";
 
 					<div class="featured-image">
 						<img
-							src="/stories/hama2.jpg"
+							src="/stories/hama2.webp"
 							alt="Olivia in the mountains at sunset"
+							decoding="async"
 						/>
 					</div>
 
@@ -82,8 +76,10 @@ import SocialLinks from "../components/SocialLinks.astro";
 					<a href="/stories/i-dont-have-a-plan">
 
 						<img
-							src="/stories/profil.jpg"
+							src="/stories/profil.webp"
 							alt="Olivia hiking"
+							loading="lazy"
+							decoding="async"
 						/>
 
 						<p class="story-meta">
@@ -109,12 +105,14 @@ import SocialLinks from "../components/SocialLinks.astro";
 
 				<!-- THE BIG WHY -->
 
-				<article class="story-card">
+				<article class="story-card" hidden>
 					<a href="/stories/the-big-why">
 
 						<img
 							src="/stories/hama.jpg"
 							alt="Ancient ruins in Syria"
+							loading="lazy"
+							decoding="async"
 						/>
 
 						<p class="story-meta">
@@ -144,8 +142,10 @@ import SocialLinks from "../components/SocialLinks.astro";
 					<a href="/stories/in-the-mountains-we-are-all-free">
 
 						<img
-							src="/stories/damavand.jpg"
+							src="/stories/damavand.webp"
 							alt="On Mount Damavand in Iran"
+							loading="lazy"
+							decoding="async"
 						/>
 
 						<p class="story-meta">
@@ -173,6 +173,7 @@ import SocialLinks from "../components/SocialLinks.astro";
 
 
 		</main>
+		<SiteFooter />
 	</body>
 </html>
 

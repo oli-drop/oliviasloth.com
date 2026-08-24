@@ -1,0 +1,85 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
+---
+
+<header class="site-header">
+	<a class="site-name" href="/">OLIVIA FJORD SLOTH</a>
+
+	<nav aria-label="Main navigation">
+		<a class:list={{ active: isActive("/stories") }} href="/stories">Stories</a>
+		<a class:list={{ active: isActive("/hiking") }} href="/hiking">Hiking</a>
+		<a class:list={{ active: isActive("/talks") }} href="/talks">Talks</a>
+		<a class:list={{ active: isActive("/about") }} href="/about">About</a>
+	</nav>
+
+	<SocialLinks />
+</header>
+
+<style>
+	.site-header {
+		display: flex;
+		align-items: center;
+		padding: 30px 48px;
+		font-family: Arial, sans-serif;
+	}
+
+	.site-name {
+		flex: 0 0 auto;
+		color: inherit;
+		font-size: 22px;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+
+	nav {
+		display: flex;
+		gap: 30px;
+		margin-left: auto;
+	}
+
+	nav a {
+		color: inherit;
+		font-size: 15px;
+		text-decoration: none;
+	}
+
+	nav a.active {
+		border-bottom: 1px solid currentColor;
+	}
+
+	@media (max-width: 800px) {
+		.site-header {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			grid-template-areas:
+				"name name"
+				"nav social";
+			row-gap: 18px;
+			padding: 24px 20px;
+		}
+
+		.site-name {
+			grid-area: name;
+			font-size: 17px;
+		}
+
+		nav {
+			grid-area: nav;
+			gap: clamp(12px, 4vw, 20px);
+			margin-left: 0;
+		}
+
+		nav a {
+			font-size: 13px;
+		}
+
+		.site-header :global(.social-links) {
+			grid-area: social;
+		}
+	}
+</style>

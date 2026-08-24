@@ -1,5 +1,6 @@
 ---
 import SocialLinks from "../components/SocialLinks.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 ---
 
 <html lang="en">
@@ -8,6 +9,7 @@ import SocialLinks from "../components/SocialLinks.astro";
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<title>Olivia Fjord Sloth</title>
+		<meta name="description" content="Stories, talks and trail notes from Olivia Fjord Sloth’s journeys beyond the familiar." />
 	</head>
 
 	<body>
@@ -80,9 +82,10 @@ import SocialLinks from "../components/SocialLinks.astro";
 
 				<div class="latest-image">
 					<img
-						src="/stories/hama2.jpg"
+						src="/stories/hama2.webp"
 						alt="Olivia in the mountains at sunset"
 						loading="lazy"
+						decoding="async"
 					/>
 				</div>
 
@@ -118,9 +121,10 @@ import SocialLinks from "../components/SocialLinks.astro";
 
 			<div class="hiking-image">
 				<img
-					src="/hiking/vanding.jpg"
+					src="/hiking/vanding.webp"
 					alt="Hiking in the mountains"
 					loading="lazy"
+					decoding="async"
 				/>
 			</div>
 
@@ -147,6 +151,7 @@ import SocialLinks from "../components/SocialLinks.astro";
 
 		</section>
 
+		<SiteFooter />
 	</body>
 </html>
 

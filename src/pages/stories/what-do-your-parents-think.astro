@@ -1,5 +1,6 @@
 ---
-import SocialLinks from "../../components/SocialLinks.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 ---
 
 <html lang="en">
@@ -7,23 +8,16 @@ import SocialLinks from "../../components/SocialLinks.astro";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
+		<title>What do your parents think? — Olivia Fjord Sloth</title>
+		<meta name="description" content="A personal essay about adventure, family and the parts of ourselves we are expected to outgrow." />
 	</head>
 
 	<body>
-		<header>
-			<a class="name" href="/">OLIVIA FJORD SLOTH</a>
-
-			<nav>
-				<a href="/stories">Stories</a>
-				<a href="/talks">Talks</a>
-				<a href="/about">About</a>
-			</nav>
-			<SocialLinks />
-		</header>
+		<SiteHeader />
 
 		<main>
 			<section class="hero">
-				<img src="/stories/hama2.jpg" alt="" />
+				<img src="/stories/hama2.webp" alt="Olivia Fjord Sloth in the mountains at sunset" decoding="async" />
 
 				<div class="hero-text">
 					<p class="category">PERSONAL ESSAY</p>
@@ -155,7 +149,7 @@ import SocialLinks from "../../components/SocialLinks.astro";
 					One last adventure.
 				</p>
 				<figure class="story-image">
-					<img src="/stories/rock.jpg" alt="Hiking in the mountains" />
+					<img src="/stories/rock.webp" alt="Hiking in the mountains" loading="lazy" decoding="async" />
 				</figure>
 				<p>
 					And then I would become serious about the life I was supposed to want.
@@ -194,6 +188,7 @@ import SocialLinks from "../../components/SocialLinks.astro";
 				<a href="/stories">← Back to stories</a>
 			</div>
 		</main>
+		<SiteFooter />
 	</body>
 </html>
 
