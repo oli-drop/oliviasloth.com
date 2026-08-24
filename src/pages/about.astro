@@ -1,10 +1,12 @@
 ---
+import SocialLinks from "../components/SocialLinks.astro";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<title>About — Olivia Fjord Sloth</title>
 	</head>
 
@@ -18,6 +20,7 @@
 				<a href="/talks">Talks</a>
 				<a class="active" href="/about">About</a>
 			</nav>
+			<SocialLinks />
 		</header>
 
 
@@ -28,7 +31,7 @@
 			<section class="intro">
 
 				<div class="intro-text">
-					<p class="eyebrow">ABOUT</p>
+					<p class="eyebrow">A LITTLE ABOUT ME</p>
 
 					<h1>Hi, I’m Olivia.</h1>
 
@@ -41,7 +44,7 @@
 				</div>
 
 				<div class="intro-image">
-					<img src="/tur2.JPEG" alt="Olivia Sloth" />
+					<img src="/tur2.JPEG" alt="Olivia Fjord Sloth" />
 				</div>
 
 			</section>
@@ -50,7 +53,7 @@
 
             <section class="story">
 
-                <p class="eyebrow">HOW I ENDED UP HERE</p>
+                <p class="eyebrow">HOW THIS STARTED</p>
 
                 <div class="story-text">
 
@@ -100,7 +103,7 @@
 
             <section class="story">
 
-                <p class="eyebrow">WALKING</p>
+                <p class="eyebrow">WHY I WALK</p>
 
                 <div class="story-text">
 
@@ -143,7 +146,7 @@
 
             <section class="story">
 
-                <p class="eyebrow">THE QUESTIONS</p>
+                <p class="eyebrow">THINGS I KEEP WONDERING ABOUT</p>
 
                 <div class="story-text">
 
@@ -184,7 +187,7 @@
 			<!-- FACTS -->
             <section class="facts">
 
-                <p class="eyebrow">FUN FACTS</p>
+                <p class="eyebrow">A FEW ODD DETAILS</p>
 
                 <div class="fact-grid">
 
@@ -227,13 +230,13 @@
 
 			<section class="contact">
 
-				<p class="eyebrow">SAY HELLO</p>
+				<p class="eyebrow">COME SAY HI</p>
 
 				<h2>
 					Want to work together, book a talk or just say hi?
 				</h2>
 
-				<a href="mailto:oliviasloth@hotmail.com">
+				<a class="contact-link" href="mailto:oliviasloth@hotmail.com">
 					Get in touch →
 				</a>
 
@@ -311,14 +314,14 @@
 	}
 
     .eyebrow {
-        margin: 0 0 24px;
-        font-size: 12px;
-        font-weight: 800;
+        margin: 0 0 20px;
+        font-size: 11px;
+        font-weight: 700;
         letter-spacing: 0.18em;
     }
     .story .eyebrow {
         max-width: 720px;
-        margin: 0 0 24px auto;
+        margin: 0 0 20px auto;
     }
 	h1 {
 		margin: 0;
@@ -434,7 +437,7 @@
 		letter-spacing: -0.025em;
 	}
 
-	.contact a {
+	.contact-link {
 		display: inline-block;
 		font-weight: 700;
 		border-bottom: 1px solid #171717;

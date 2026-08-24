@@ -1,22 +1,25 @@
 ---
+import SocialLinks from "../components/SocialLinks.astro";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Stories — Olivia Sloth</title>
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<title>Stories — Olivia Fjord Sloth</title>
 	</head>
 
 	<body>
 		<header>
-			<a class="name" href="/">OLIVIA SLOTH</a>
+			<a class="name" href="/">OLIVIA FJORD SLOTH</a>
 
 			<nav>
 				<a class="active" href="/stories">Stories</a>
 				<a href="/talks">Talks</a>
 				<a href="/about">About</a>
 			</nav>
+			<SocialLinks />
 		</header>
 
 		<main>
@@ -24,7 +27,7 @@
 			<!-- PAGE INTRO -->
 
 			<section class="page-intro">
-				<p class="eyebrow">FROM THE ROAD</p>
+				<p class="eyebrow">NOTES FROM ALONG THE WAY</p>
 
 				<h1>Stories</h1>
 
@@ -73,6 +76,8 @@
 
 			<section class="story-grid">
 
+				<!-- I DON'T HAVE A PLAN -->
+
 				<article class="story-card">
 					<a href="/stories/i-dont-have-a-plan">
 
@@ -82,7 +87,7 @@
 						/>
 
 						<p class="story-meta">
-							PERSONAL ESSAY
+							PERSONAL ESSAY · 2026
 						</p>
 
 						<h3>
@@ -102,6 +107,8 @@
 				</article>
 
 
+				<!-- THE BIG WHY -->
+
 				<article class="story-card">
 					<a href="/stories/the-big-why">
 
@@ -119,7 +126,7 @@
 						</h3>
 
 						<p class="description">
-							My first journey through Syria — on foot, through mountains,
+							My first journey through Syria, on foot, through mountains,
 							caves and a country I knew mostly from the headlines.
 						</p>
 
@@ -130,7 +137,40 @@
 					</a>
 				</article>
 
+
+				<!-- DAMAVAND -->
+
+				<article class="story-card">
+					<a href="/stories/in-the-mountains-we-are-all-free">
+
+						<img
+							src="/stories/damavand.jpg"
+							alt="On Mount Damavand in Iran"
+						/>
+
+						<p class="story-meta">
+							IRAN · 2022
+						</p>
+
+						<h3>
+							"In the mountains we are all free"
+						</h3>
+
+						<p class="description">
+							I went to Iran to climb its highest mountain alone.
+							What stayed with me were the people I met along the way.
+						</p>
+
+						<span class="read-link">
+							Read story →
+						</span>
+
+					</a>
+				</article>
+
 			</section>
+
+
 
 		</main>
 	</body>

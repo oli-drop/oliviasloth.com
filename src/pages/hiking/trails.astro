@@ -1,14 +1,17 @@
 ---
+import SocialLinks from "../../components/SocialLinks.astro";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Hiking — Olivia Fjord Sloth</title>
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<title>Trails I've Walked — Olivia Fjord Sloth</title>
 	</head>
 
 	<body>
+
 		<header>
 			<a class="name" href="/">OLIVIA FJORD SLOTH</a>
 
@@ -18,76 +21,74 @@
 				<a href="/talks">Talks</a>
 				<a href="/about">About</a>
 			</nav>
+			<SocialLinks />
 		</header>
+
 
 		<main>
 
-			<section class="hero">
-				<p class="eyebrow">HIKING</p>
+			<!-- INTRO -->
 
-				<h1>Notes from the trail.</h1>
+			<section class="hero">
+
+				<p class="eyebrow">ROUTES I’VE WALKED</p>
+
+				<h1>Trails I’ve walked.</h1>
 
 				<p class="intro">
-					Routes I’ve walked, GPX files, food, planning and the things
-					I’ve learned by actually being out there.
+					Routes I’ve walked, with GPX files, practical notes
+					and things I wish I had known before I went.
 				</p>
+
 			</section>
 
 
-			<section class="guide-grid">
+			<!-- TRAILS -->
 
-				<a class="guide-card" href="/hiking/trails">
-					<img src="/hiking/trails.jpg" alt="Mountain hiking trail" />
+			<section class="trails-grid">
 
-					<div class="guide-content">
-						<p class="label">ROUTES</p>
-						<h2>Trails I’ve walked</h2>
-						<p>
-							Routes, GPX files and my own notes from hikes in places
-							like Kyrgyzstan, Tajikistan and Iran.
-						</p>
-						<span>Explore trails →</span>
+				<a class="trail-card" href="/hiking/trails/pamir-trail">
+
+					<div class="trail-image">
+						<img
+							src="/hiking/bus_tji.jpg"
+							alt="Travelling to the Pamir Trail in Tajikistan"
+						/>
 					</div>
-				</a>
 
+					<div class="trail-info">
 
-				<a class="guide-card" href="/hiking/food">
-					<img src="/hiking/food.jpg" alt="Food for hiking" />
-
-					<div class="guide-content">
-						<p class="label">TRAIL FOOD</p>
-						<h2>What I eat on long hikes</h2>
-						<p>
-							Dehydrated meals, what works for me and what I actually
-							carry when I’m out for several days.
+						<p class="trail-country">
+							TAJIKISTAN
 						</p>
-						<span>Trail food →</span>
-					</div>
-				</a>
 
+						<h2>Pamir Trail</h2>
 
-				<a class="guide-card" href="/hiking/planning">
-					<img src="/hiking/map.jpg" alt="Map and hiking planning" />
-
-					<div class="guide-content">
-						<p class="label">PLANNING</p>
-						<h2>Maps, GPX and planning</h2>
-						<p>
-							The websites, apps and small tricks I use when planning
-							a route somewhere I haven’t been before.
+						<p class="trail-details">
+							158.5 km · Fann Mountains · highest pass 4,750 m
 						</p>
-						<span>Planning notes →</span>
+						<p class="trail-description">
+							The most beautiful hike I have ever done, and quite a bit
+							harder than I expected.
+						</p>
+
+						<span>View trail →</span>
+
 					</div>
+
 				</a>
 
 			</section>
 
 		</main>
+
 	</body>
 </html>
 
 
 <style>
+
+	/* GENERAL */
 
 	* {
 		box-sizing: border-box;
@@ -110,8 +111,12 @@
 		text-decoration: none;
 	}
 
+
+	/* HEADER */
+
 	header {
 		padding: 30px 48px;
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -136,88 +141,136 @@
 		border-bottom: 1px solid #171717;
 	}
 
+
+	/* HERO */
+
 	.hero {
 		max-width: 1200px;
-		margin: 100px auto 100px;
+		margin: 100px auto 110px;
 		padding: 0 48px;
 	}
 
-	.eyebrow,
-	.label {
+	.eyebrow {
 		margin: 0 0 20px;
+
 		font-size: 11px;
 		font-weight: 700;
 		letter-spacing: 0.18em;
 	}
 
-	h1 {
+	.hero h1 {
+		max-width: 1000px;
 		margin: 0;
+
 		font-family: Georgia, "Times New Roman", serif;
-		font-size: clamp(70px, 9vw, 130px);
+		font-size: clamp(64px, 8vw, 115px);
 		font-weight: 400;
-		line-height: 0.92;
+		line-height: 0.94;
 		letter-spacing: -0.04em;
 	}
 
 	.intro {
-		max-width: 720px;
+		max-width: 700px;
 		margin: 40px 0 0;
+
 		font-family: Georgia, "Times New Roman", serif;
-		font-size: clamp(23px, 2.6vw, 34px);
-		line-height: 1.4;
+		font-size: clamp(22px, 2.4vw, 31px);
+		line-height: 1.45;
+
 		color: #555;
 	}
 
-	.guide-grid {
-		max-width: 1400px;
+
+	/* TRAILS */
+
+	.trails-grid {
+		max-width: 1200px;
 		margin: 0 auto;
-		padding: 0 48px 130px;
+		padding: 0 48px 150px;
 
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 35px;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 70px 40px;
 	}
 
-	.guide-card img {
+	.trail-card {
+		display: block;
+	}
+
+	.trail-image {
+		overflow: hidden;
+	}
+
+	.trail-image img {
 		display: block;
 		width: 100%;
-		aspect-ratio: 4 / 5;
+
+		aspect-ratio: 4 / 3;
 		object-fit: cover;
+
+		transition: transform 0.3s ease;
 	}
 
-	.guide-content {
+	.trail-card:hover .trail-image img {
+		transform: scale(1.015);
+	}
+
+	.trail-info {
 		padding-top: 22px;
 	}
 
-	.guide-content h2 {
-		margin: 0 0 14px;
+	.trail-country {
+		margin: 0 0 13px;
+
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.17em;
+	}
+
+	.trail-info h2 {
+		margin: 0 0 15px;
+
 		font-family: Georgia, "Times New Roman", serif;
-		font-size: 34px;
+		font-size: 42px;
 		font-weight: 400;
 		line-height: 1.05;
 	}
 
-	.guide-content > p:not(.label) {
+	.trail-details {
 		margin: 0 0 18px;
-		font-family: Georgia, "Times New Roman", serif;
-		font-size: 17px;
-		line-height: 1.55;
+
+		font-family: Arial, sans-serif;
+		font-size: 13px;
+		line-height: 1.5;
+
 		color: #555;
 	}
 
-	.guide-content span {
+	.trail-description {
+		max-width: 500px;
+		margin: 0 0 22px;
+
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 18px;
+		line-height: 1.55;
+
+		color: #555;
+	}
+
+	.trail-info span {
 		display: inline-block;
+
 		font-size: 13px;
 		font-weight: 700;
+
 		border-bottom: 1px solid #171717;
-		padding-bottom: 3px;
+		padding-bottom: 4px;
 	}
 
-	.guide-card:hover img {
-		opacity: 0.93;
-	}
 
-	@media (max-width: 800px) {
+	/* MOBILE */
+
+	@media (max-width: 700px) {
 
 		header {
 			padding: 24px 20px;
@@ -235,28 +288,36 @@
 			font-size: 12px;
 		}
 
+
 		.hero {
-			margin: 60px auto 70px;
+			margin: 60px auto 75px;
 			padding: 0 24px;
 		}
 
-		h1 {
-			font-size: 62px;
+		.hero h1 {
+			font-size: 58px;
 		}
 
 		.intro {
-			font-size: 22px;
+			font-size: 21px;
 		}
 
-		.guide-grid {
+
+		.trails-grid {
+			padding: 0 24px 100px;
+
 			grid-template-columns: 1fr;
-			padding: 0 24px 90px;
 			gap: 70px;
 		}
 
-		.guide-card img {
-			aspect-ratio: 4 / 3;
+		.trail-info h2 {
+			font-size: 36px;
 		}
+
+		.trail-description {
+			font-size: 17px;
+		}
+
 	}
 
 </style>

@@ -1,27 +1,30 @@
 ---
+import SocialLinks from "../components/SocialLinks.astro";
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Talks — Olivia Sloth</title>
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<title>Talks — Olivia Fjord Sloth</title>
 	</head>
 
 	<body>
 		<header>
-			<a class="name" href="/">OLIVIA SLOTH</a>
+			<a class="name" href="/">OLIVIA FJORD SLOTH</a>
 
 			<nav>
 				<a href="/stories">Stories</a>
 				<a class="active" href="/talks">Talks</a>
 				<a href="/about">About</a>
 			</nav>
+			<SocialLinks />
 		</header>
 
 		<main>
 			<section class="hero">
-				<p class="eyebrow">TALKS</p>
+				<p class="eyebrow">STORIES TOLD OUT LOUD</p>
 				<h1>Stories worth leaving the sofa for.</h1>
 				<p class="intro">
 					From solo journeys through places shaped by conflict to a very unlikely route
@@ -34,7 +37,7 @@
 
 				<article class="talk-card">
 					<div class="talk-image">
-						<img src="/tur2.JPEG" alt="Olivia Sloth travelling in the mountains" />
+						<img src="/tur2.JPEG" alt="Olivia Fjord Sloth travelling in the mountains" />
 					</div>
 
 					<div class="talk-content">
@@ -79,7 +82,7 @@
 
 				<article class="talk-card reverse">
 					<div class="talk-image">
-						<img src="/te_speak.JPEG" alt="Olivia Sloth giving a talk" />
+						<img src="/te_speak.JPEG" alt="Olivia Fjord Sloth giving a talk" />
 					</div>
 
 					<div class="talk-content">
@@ -232,7 +235,7 @@
 	.eyebrow,
 	.label {
 		margin: 0 0 20px;
-		font-size: 12px;
+		font-size: 11px;
 		font-weight: 700;
 		letter-spacing: 0.18em;
 	}
