@@ -1,3 +1,31 @@
 ---
-return Astro.redirect("/stories");
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import ComingSoon from "../../components/ComingSoon.astro";
 ---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/png" href="/favicon.png?v=2" />
+		<title>The Big Why — Olivia Fjord Sloth</title>
+		<meta name="description" content="The Big Why, a story from Olivia Fjord Sloth’s journey through Syria, is coming soon." />
+	</head>
+	<body>
+		<SiteHeader />
+		<ComingSoon
+			eyebrow="SYRIA · OCTOBER 2025"
+			title="Coming soon."
+			text="I’m still writing this story from my first journey through Syria — on foot, through mountains, caves and questions that stayed with me."
+			backHref="/stories"
+			backLabel="Back to stories"
+		/>
+		<SiteFooter />
+	</body>
+</html>
+
+<style>
+	:global(*) { box-sizing: border-box; }
+	:global(html), :global(body) { margin: 0; padding: 0; background: #f4f1ea; color: #171717; }
+</style>
