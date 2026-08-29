@@ -1,16 +1,20 @@
 ---
 import SocialLinks from "../components/SocialLinks.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
+
+const isDanish = Astro.currentLocale === "da";
+const localize = (path: string) => isDanish ? `/da${path}` : path;
 ---
 
-<html lang="en">
+<html lang={isDanish ? "da" : "en"}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" sizes="256x256" href="/favicon-original-tent-close.png?v=7" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=7" />
 		<title>Olivia Fjord Sloth</title>
-		<meta name="description" content="Stories, talks and trail notes from Olivia Fjord Sloth’s journeys beyond the familiar." />
+		<meta name="description" content={isDanish ? "Historier, foredrag og vandrenoter fra Olivia Fjord Sloths rejser uden for det velkendte." : "Stories, talks and trail notes from Olivia Fjord Sloth’s journeys beyond the familiar."} />
 	</head>
 
 	<body>
@@ -19,29 +23,30 @@ import SiteFooter from "../components/SiteFooter.astro";
 
 		<section class="hero">
 
-			<a class="video-panel" href="/stories">
+			<a class="video-panel" href={localize("/stories")}>
 				<video autoplay muted loop playsinline preload="metadata">
 					<source src="/hidden3.MP4" type="video/mp4" />
 				</video>
-				<span>STORIES</span>
+				<span>{isDanish ? "HISTORIER" : "STORIES"}</span>
 			</a>
 
-			<a class="video-panel" href="/talks">
+			<a class="video-panel" href={localize("/talks")}>
 				<video autoplay muted loop playsinline preload="metadata">
 					<source src="/drone.MP4" type="video/mp4" />
 				</video>
-				<span>TALKS</span>
+				<span>{isDanish ? "FOREDRAG" : "TALKS"}</span>
 			</a>
 
-			<a class="video-panel" href="/about">
+			<a class="video-panel" href={localize("/about")}>
 				<video autoplay muted loop playsinline preload="metadata">
 					<source src="/me.MP4" type="video/mp4" />
 				</video>
-				<span>ABOUT</span>
+				<span>{isDanish ? "OM MIG" : "ABOUT"}</span>
 			</a>
 
-			<a class="name" href="/">OLIVIA FJORD SLOTH</a>
+			<a class="name" href={isDanish ? "/da/" : "/"}>OLIVIA FJORD SLOTH</a>
 			<SocialLinks light hero />
+			<div class="hero-language"><LanguageSwitcher light /></div>
 
 		</section>
 
@@ -53,21 +58,19 @@ import SiteFooter from "../components/SiteFooter.astro";
 			<div class="intro-inner">
 
 				<p class="eyebrow">
-					A LITTLE OFF COURSE
+					{isDanish ? "LIDT UDEN FOR KURS" : "A LITTLE OFF COURSE"}
 				</p>
 
 				<h2>
-					Away from the main road,
-					literally and otherwise.
+					{isDanish ? "Jeg ender tit med flere spørgsmål end svar." : "Away from the main road, literally and otherwise."}
 				</h2>
 
 				<p class="intro-text">
-					Stories from mountains, long walks and time spent with
-					people in places we mostly hear about when something goes wrong.
+					{isDanish ? "Her er nogle af historierne, menneskene og stederne, jeg har mødt på vejen." : "Stories from mountains, long walks and time spent with people in places we mostly hear about when something goes wrong."}
 				</p>
 
-				<a class="intro-link" href="/stories">
-					Read my stories →
+				<a class="intro-link" href={localize("/stories")}>
+					{isDanish ? "Læs mine historier →" : "Read my stories →"}
 				</a>
 
 			</div>
@@ -93,20 +96,19 @@ import SiteFooter from "../components/SiteFooter.astro";
 				<div class="latest-content">
 
 					<p class="latest-label">
-						LATEST STORY
+						{isDanish ? "NYESTE HISTORIE" : "LATEST STORY"}
 					</p>
 
 					<h2>
-						What do your parents think?
+						{isDanish ? "Hvad tænker dine forældre?" : "What do your parents think?"}
 					</h2>
 
 					<p class="latest-subtitle">
-						About adventure, family and the parts of ourselves
-						we’re expected to outgrow.
+						{isDanish ? "Om eventyr, familie og de sider af os selv, vi forventes at vokse fra." : "About adventure, family and the parts of ourselves we’re expected to outgrow."}
 					</p>
 
-					<a href="/stories/what-do-your-parents-think">
-						Read story →
+					<a href={localize("/stories/what-do-your-parents-think")}>
+						{isDanish ? "Læs historien →" : "Read story →"}
 					</a>
 
 				</div>
@@ -132,20 +134,19 @@ import SiteFooter from "../components/SiteFooter.astro";
 			<div class="hiking-content">
 
 				<p class="hiking-label">
-					HIKING
+					{isDanish ? "VANDRING" : "HIKING"}
 				</p>
 
 				<h2>
-					Notes from the trail.
+					{isDanish ? "Noter fra stien." : "Notes from the trail."}
 				</h2>
 
 				<p>
-					Routes I’ve walked, food I take with me and things
-					I wish I had known before I started.
+					{isDanish ? "Ruter jeg har vandret, mad jeg tager med, og ting jeg ville ønske, jeg havde vidst, før jeg begyndte." : "Routes I’ve walked, food I take with me and things I wish I had known before I started."}
 				</p>
 
-				<a href="/hiking">
-					Explore hiking →
+				<a href={localize("/hiking")}>
+					{isDanish ? "Udforsk vandring →" : "Explore hiking →"}
 				</a>
 
 			</div>
@@ -245,6 +246,17 @@ import SiteFooter from "../components/SiteFooter.astro";
 		font-size: 24px;
 		font-weight: 700;
 		letter-spacing: 0.08em;
+	}
+
+	.hero-language {
+		position: absolute;
+		top: 66px;
+		right: 41px;
+		z-index: 6;
+	}
+
+	.hero-language :global(.language-switcher) {
+		margin-left: 0;
 	}
 
 
@@ -462,6 +474,10 @@ import SiteFooter from "../components/SiteFooter.astro";
 	/* MOBILE */
 
 	@media (max-width: 700px) {
+		.hero-language {
+			top: 53px;
+			right: 13px;
+		}
 
 		.hero {
 			height: auto;

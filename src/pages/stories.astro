@@ -1,16 +1,19 @@
 ---
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+
+const isDanish = Astro.currentLocale === "da";
+const localize = (path: string) => isDanish ? `/da${path}` : path;
 ---
 
-<html lang="en">
+<html lang={isDanish ? "da" : "en"}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" sizes="256x256" href="/favicon-original-tent-close.png?v=7" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=7" />
-		<title>Stories — Olivia Fjord Sloth</title>
-		<meta name="description" content="Personal stories from mountains, long walks and journeys beyond the familiar." />
+		<title>{isDanish ? "Historier — Olivia Fjord Sloth" : "Stories — Olivia Fjord Sloth"}</title>
+		<meta name="description" content={isDanish ? "Personlige historier fra bjerge, lange vandringer og rejser uden for det velkendte." : "Personal stories from mountains, long walks and journeys beyond the familiar."} />
 	</head>
 
 	<body>
@@ -21,12 +24,12 @@ import SiteFooter from "../components/SiteFooter.astro";
 			<!-- PAGE INTRO -->
 
 			<section class="page-intro">
-				<p class="eyebrow">NOTES FROM ALONG THE WAY</p>
+				<p class="eyebrow">{isDanish ? "NOTER FRA VEJEN" : "NOTES FROM ALONG THE WAY"}</p>
 
-				<h1>Stories</h1>
+				<h1>{isDanish ? "Historier" : "Stories"}</h1>
 
 				<p class="intro-text">
-					Stories about people, places and questions I don’t have easy answers to.
+					{isDanish ? "Om det, jeg oplever undervejs, og det jeg bliver ved med at tænke på bagefter." : "About people, places and questions I’m still trying to figure out."}
 				</p>
 			</section>
 
@@ -34,7 +37,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 			<!-- LATEST STORY -->
 
 			<section class="featured-story">
-				<a href="/stories/what-do-your-parents-think">
+				<a href={localize("/stories/what-do-your-parents-think")}>
 
 					<div class="featured-image">
 						<img
@@ -46,20 +49,19 @@ import SiteFooter from "../components/SiteFooter.astro";
 
 					<div class="featured-text">
 						<p class="story-meta">
-							LATEST STORY · PERSONAL ESSAY
+							{isDanish ? "NYESTE HISTORIE · PERSONLIGT ESSAY" : "LATEST STORY · PERSONAL ESSAY"}
 						</p>
 
 						<h2>
-							What do your parents think?
+							{isDanish ? "Hvad tænker dine forældre?" : "What do your parents think?"}
 						</h2>
 
 						<p class="description">
-							About adventure, family and the parts of ourselves
-							we’re expected to outgrow.
+							{isDanish ? "Om eventyr, familie og de sider af os selv, vi forventes at vokse fra." : "About adventure, family and the parts of ourselves we’re expected to outgrow."}
 						</p>
 
 						<span class="read-link">
-							Read story →
+							{isDanish ? "Læs historien →" : "Read story →"}
 						</span>
 					</div>
 
@@ -74,7 +76,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 				<!-- I DON'T HAVE A PLAN -->
 
 				<article class="story-card">
-					<a href="/stories/i-dont-have-a-plan">
+					<a href={localize("/stories/i-dont-have-a-plan")}>
 
 						<img
 							src="/stories/profil.webp"
@@ -84,20 +86,19 @@ import SiteFooter from "../components/SiteFooter.astro";
 						/>
 
 						<p class="story-meta">
-							PERSONAL ESSAY · 2026
+							{isDanish ? "PERSONLIGT ESSAY · 2026" : "PERSONAL ESSAY · 2026"}
 						</p>
 
 						<h3>
-							I don’t have a plan
+							{isDanish ? "Jeg har ikke en plan" : "I don’t have a plan"}
 						</h3>
 
 						<p class="description">
-							In a few weeks, I’m leaving my job and flying to Syria
-							on a one-way ticket.
+							{isDanish ? "Om få uger siger jeg mit job op og flyver til Syrien på en enkeltbillet." : "In a few weeks, I’m leaving my job and flying to Syria on a one-way ticket."}
 						</p>
 
 						<span class="read-link">
-							Read story →
+							{isDanish ? "Læs historien →" : "Read story →"}
 						</span>
 
 					</a>
@@ -107,7 +108,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 				<!-- THE BIG WHY -->
 
 				<article class="story-card">
-					<a href="/stories/the-big-why">
+					<a href={localize("/stories/the-big-why")}>
 
 						<div class="card-image">
 							<img
@@ -116,24 +117,23 @@ import SiteFooter from "../components/SiteFooter.astro";
 								loading="lazy"
 								decoding="async"
 							/>
-							<span class="coming-soon-label">COMING SOON</span>
+							<span class="coming-soon-label">{isDanish ? "KOMMER SNART" : "COMING SOON"}</span>
 						</div>
 
 						<p class="story-meta">
-							SYRIA · OCTOBER 2025
+							{isDanish ? "SYRIEN · OKTOBER 2025" : "SYRIA · OCTOBER 2025"}
 						</p>
 
 						<h3>
-							The big why
+							{isDanish ? "Det store hvorfor" : "The big why"}
 						</h3>
 
 						<p class="description">
-							My first journey through Syria, on foot, through mountains,
-							caves and a country I knew mostly from the headlines.
+							{isDanish ? "Min første rejse gennem Syrien til fods, gennem bjerge, huler og et land, jeg mest kendte fra overskrifterne." : "My first journey through Syria, on foot, through mountains, caves and a country I knew mostly from the headlines."}
 						</p>
 
 						<span class="read-link">
-							Read story →
+							{isDanish ? "Læs historien →" : "Read story →"}
 						</span>
 
 					</a>
@@ -143,7 +143,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 				<!-- DAMAVAND -->
 
 				<article class="story-card">
-					<a href="/stories/in-the-mountains-we-are-all-free">
+					<a href={localize("/stories/in-the-mountains-we-are-all-free")}>
 
 						<img
 							src="/stories/damavand.webp"
@@ -153,20 +153,19 @@ import SiteFooter from "../components/SiteFooter.astro";
 						/>
 
 						<p class="story-meta">
-							IRAN · 2022
+							{isDanish ? "IRAN · 2022" : "IRAN · 2022"}
 						</p>
 
 						<h3>
-							"In the mountains we are all free"
+							{isDanish ? "I bjergene er vi alle frie" : '"In the mountains we are all free"'}
 						</h3>
 
 						<p class="description">
-							I went to Iran to climb its highest mountain alone.
-							What stayed with me were the people I met along the way.
+							{isDanish ? "Jeg tog til Iran for at bestige landets højeste bjerg alene. Det, der blev hos mig, var menneskene, jeg mødte undervejs." : "I went to Iran to climb its highest mountain alone. What stayed with me were the people I met along the way."}
 						</p>
 
 						<span class="read-link">
-							Read story →
+							{isDanish ? "Læs historien →" : "Read story →"}
 						</span>
 
 					</a>

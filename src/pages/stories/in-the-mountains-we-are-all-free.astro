@@ -164,6 +164,15 @@ import SiteFooter from "../../components/SiteFooter.astro";
 					Also, at that point, there wasn't really any way back.
 				</p>
 
+				<figure class="article-photo">
+					<img
+						src="/stories/olivia-iran-bazaar.jpg"
+						alt="Olivia in a busy bazaar in Iran"
+						loading="lazy"
+						decoding="async"
+					/>
+				</figure>
+
 
 				<h2>The Iranian hippies</h2>
 
@@ -586,6 +595,17 @@ import SiteFooter from "../../components/SiteFooter.astro";
 	article .short {
 		font-size: 25px;
 		line-height: 1.4;
+	}
+
+	.article-photo {
+		max-width: 340px;
+		margin: 70px auto 0;
+	}
+
+	.article-photo img {
+		display: block;
+		width: 100%;
+		height: auto;
 	}
 
 	article h2 {

@@ -1,21 +1,29 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
 
 const path = Astro.url.pathname;
-const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
+const isDanish = Astro.currentLocale === "da" || path === "/da" || path.startsWith("/da/");
+const prefix = isDanish ? "/da" : "";
+const nav = isDanish
+	? { stories: "Historier", hiking: "Vandring", talks: "Foredrag", about: "Om mig" }
+	: { stories: "Stories", hiking: "Hiking", talks: "Talks", about: "About" };
+const localizedHref = (href: string) => `${prefix}${href}`;
+const isActive = (href: string) => path === localizedHref(href) || path.startsWith(`${localizedHref(href)}/`);
 ---
 
 <header class="site-header">
-	<a class="site-name" href="/">OLIVIA FJORD SLOTH</a>
+	<a class="site-name" href={prefix || "/"}>OLIVIA FJORD SLOTH</a>
 
-	<nav aria-label="Main navigation">
-		<a class:list={{ active: isActive("/stories") }} href="/stories">Stories</a>
-		<a class:list={{ active: isActive("/hiking") }} href="/hiking">Hiking</a>
-		<a class:list={{ active: isActive("/talks") }} href="/talks">Talks</a>
-		<a class:list={{ active: isActive("/about") }} href="/about">About</a>
+	<nav aria-label={isDanish ? "Hovednavigation" : "Main navigation"}>
+		<a class:list={{ active: isActive("/stories") }} href={localizedHref("/stories")}>{nav.stories}</a>
+		<a class:list={{ active: isActive("/hiking") }} href={localizedHref("/hiking")}>{nav.hiking}</a>
+		<a class:list={{ active: isActive("/talks") }} href={localizedHref("/talks")}>{nav.talks}</a>
+		<a class:list={{ active: isActive("/about") }} href={localizedHref("/about")}>{nav.about}</a>
 	</nav>
 
 	<SocialLinks />
+	<LanguageSwitcher />
 </header>
 
 <style>
@@ -55,10 +63,10 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
 	@media (max-width: 800px) {
 		.site-header {
 			display: grid;
-			grid-template-columns: 1fr auto;
+			grid-template-columns: 1fr auto auto;
 			grid-template-areas:
-				"name name"
-				"nav social";
+				"name name name"
+				"nav social language";
 			row-gap: 18px;
 			padding: 24px 20px;
 		}
@@ -80,6 +88,10 @@ const isActive = (href: string) => path === href || path.startsWith(`${href}/`);
 
 		.site-header :global(.social-links) {
 			grid-area: social;
+		}
+
+		.site-header :global(.language-switcher) {
+			grid-area: language;
 		}
 	}
 </style>

@@ -2,9 +2,10 @@
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import ComingSoon from "../../components/ComingSoon.astro";
+const isDanish = Astro.currentLocale === "da";
 ---
 
-<html lang="en">
+<html lang={isDanish ? "da" : "en"}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,11 +17,11 @@ import ComingSoon from "../../components/ComingSoon.astro";
 	<body>
 		<SiteHeader />
 		<ComingSoon
-			eyebrow="SYRIA · OCTOBER 2025"
-			title="Coming soon."
-			text="I’m still writing this story from my first journey through Syria — on foot, through mountains, caves and questions that stayed with me."
-			backHref="/stories"
-			backLabel="Back to stories"
+			eyebrow={isDanish ? "SYRIEN · OKTOBER 2025" : "SYRIA · OCTOBER 2025"}
+			title={isDanish ? "Kommer snart." : "Coming soon."}
+			text={isDanish ? "Jeg er stadig ved at skrive historien fra min første rejse gennem Syrien — til fods, gennem bjerge, huler og spørgsmål, der blev hos mig." : "I’m still writing this story from my first journey through Syria — on foot, through mountains, caves and questions that stayed with me."}
+			backHref={isDanish ? "/da/stories" : "/stories"}
+			backLabel={isDanish ? "Tilbage til historier" : "Back to stories"}
 		/>
 		<SiteFooter />
 	</body>

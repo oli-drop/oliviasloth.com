@@ -1,16 +1,18 @@
 ---
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+
+const isDanish = Astro.currentLocale === "da";
 ---
 
-<html lang="en">
+<html lang={isDanish ? "da" : "en"}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" sizes="256x256" href="/favicon-original-tent-close.png?v=7" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=7" />
-		<title>Talks — Olivia Fjord Sloth</title>
-		<meta name="description" content="Book Olivia Fjord Sloth for talks about adventure, curiosity, mistakes and the stories that came out of them." />
+		<title>{isDanish ? "Foredrag — Olivia Fjord Sloth" : "Talks — Olivia Fjord Sloth"}</title>
+		<meta name="description" content={isDanish ? "Book Olivia Fjord Sloth til foredrag om eventyr, nysgerrighed, fejl og de historier, der kom ud af dem." : "Book Olivia Fjord Sloth for talks about adventure, curiosity, mistakes and the stories that came out of them."} />
 	</head>
 
 	<body>
@@ -18,12 +20,10 @@ import SiteFooter from "../components/SiteFooter.astro";
 
 		<main>
 			<section class="hero">
-				<p class="eyebrow">STORIES TOLD OUT LOUD</p>
-				<h1>Stories worth leaving the sofa for.</h1>
+				<p class="eyebrow">{isDanish ? "HISTORIER FORTALT HØJT" : "STORIES TOLD OUT LOUD"}</p>
+				<h1>{isDanish ? "Historier fra lidt uden for alfarvej." : "Stories from a little off the usual path."}</h1>
 				<p class="intro">
-					From solo journeys through places shaped by conflict to a very unlikely route
-					from struggling in school to a PhD in physics. Two different talks, both built
-					around curiosity, mistakes and the stories that came out of them.
+					{isDanish ? "Fra solorejser gennem steder præget af konflikt til en ret usandsynlig vej fra skolevanskeligheder til en ph.d. i fysik. To ret forskellige historier, men begge drevet af den samme nysgerrighed." : "From solo journeys through places shaped by conflict to a rather unlikely route from struggling in school to a PhD in physics. Two very different stories, both driven by the same curiosity."}
 				</p>
 			</section>
 
@@ -36,39 +36,31 @@ import SiteFooter from "../components/SiteFooter.astro";
 
 					<div class="talk-content">
 						<p class="number">01</p>
-						<p class="label">ADVENTURE & OUTDOOR</p>
+						<p class="label">{isDanish ? "EVENTYR & FRILUFTSLIV" : "ADVENTURE & OUTDOORS"}</p>
 
-						<h2>Hiking in the Shadows</h2>
+						<h2>{isDanish ? "Vandring i skyggerne" : "Hiking in the Shadows"}</h2>
 
 						<p class="subtitle">
-							What happens when you walk through places most of us only know from the news?
+							{isDanish ? "Hvad sker der, når man vandrer gennem steder, vi mest hører om på grund af krig og konflikt?" : "What happens when you walk through places we mostly hear about because of war and conflict?"}
 						</p>
 
 						<p>
-							I travel slowly, often alone and often on foot. Some of those journeys have taken
-							me through Central Asia, Iran, Lebanon, Iraqi Kurdistan and Syria — places we mostly
-							hear about when something goes wrong.
+							{isDanish ? "Jeg rejser langsomt, ofte alene og helst til fods. Nogle af rejserne har ført mig gennem Centralasien, Iran, Libanon, irakisk Kurdistan og Syrien, steder vi mest hører om, når noget går galt." : "I travel slowly, often alone and preferably on foot. Some of those journeys have taken me through Central Asia, Iran, Lebanon, Iraqi Kurdistan and Syria, places we mostly hear about when something goes wrong."}
 						</p>
 
 						<p>
-							In this talk, I share stories from mountains, caves, border areas and long days on foot:
-							accepting invitations from strangers, getting caught near demonstrations, navigating
-							military checkpoints and ending up in situations I could never have planned.
+							{isDanish ? "I foredraget deler jeg historier fra bjerge, huler, grænseområder og lange dage til fods. Om at blive inviteret indenfor af mennesker, jeg lige har mødt, demonstrationer, militære checkpoints og situationer, jeg aldrig kunne have planlagt." : "In this talk, I share stories from mountains, caves, border areas and long days on foot. About being invited into the homes of people I have just met, getting caught near demonstrations, navigating military checkpoints and ending up in situations I could never have planned."}
 						</p>
 
 						<p>
-							But travelling this way also raises questions. How much should you trust?
-							When does curiosity become irresponsibility? And what does it mean to be a guest
-							in a place shaped by conflict?
+							{isDanish ? "Men denne måde at rejse på rejser også spørgsmål. Hvor meget skal man stole på andre? Hvornår bliver nysgerrighed til uansvarlighed? Og hvad vil det sige at være gæst et sted præget af konflikt?" : "But travelling this way also raises questions. How much should you trust other people? When does curiosity become irresponsibility? And what does it mean to be a guest in a place shaped by conflict?"}
 						</p>
 
 						<p>
-							It is a talk about hospitality, risk, vulnerability and the people you meet when
-							you slow down enough to let the journey change along the way.
+							{isDanish ? "Det er et foredrag om gæstfrihed, risiko, sårbarhed og de mennesker, man møder, når man sænker paraderne og farten nok til at lade rejsen ændre sig undervejs." : "It is a talk about hospitality, risk, vulnerability and the people you meet when you lower your guard and slow down enough to let the journey change along the way."}
 						</p>
 						<p class="good-for">
-							<strong>Good for:</strong> libraries, outdoor clubs, højskoler, associations,
-							cultural venues and companies.
+							<strong>{isDanish ? "Passer til:" : "Good for:"}</strong> {isDanish ? "biblioteker, friluftsforeninger, højskoler, foreninger, kulturhuse og virksomheder." : "libraries, outdoor clubs, folk high schools, associations, cultural venues and companies."}
 						</p>
 					</div>
 				</article>
@@ -81,44 +73,35 @@ import SiteFooter from "../components/SiteFooter.astro";
 
 					<div class="talk-content">
 						<p class="number">02</p>
-						<p class="label">SCHOOLS & YOUNG PEOPLE</p>
+						<p class="label">{isDanish ? "SKOLER & UNGE" : "SCHOOLS & YOUNG PEOPLE"}</p>
 
-						<h2>Choosing Curiosity Over the Fear of Failure</h2>
+						<h2>{isDanish ? "At vælge nysgerrigheden frem for frygten for at fejle" : "Choosing Curiosity Over the Fear of Failure"}</h2>
 
 						<p class="subtitle">
-							From “not suited for high school” to circus school,
-							 back to the classroom - and eventually a PhD in physics.						</p>
+							{isDanish ? "Fra “ikke egnet til gymnasiet” til cirkusskole, tilbage til klasselokalet og til sidst en ph.d. i fysik." : "From “not suited for high school” to circus school, back to the classroom and eventually a PhD in physics."}						</p>
 
 						<p>
-							I was told I wasn’t suited for high school. I was dyslexic, struggled in school
-							and definitely didn’t imagine that I would one day end up with a PhD in physics.
+							{isDanish ? "Jeg er ordblind og havde det svært i skolen. På det tidspunkt forestillede jeg mig bestemt ikke, at jeg en dag ville ende med en ph.d. i fysik fra DTU." : "I’m dyslexic and struggled in school. At the time, I definitely didn’t imagine that I would one day end up with a PhD in physics from DTU."}
 						</p>
 
 						<p>
-							My way there wasn’t particularly straight. I went to circus school, spent some
-							time away from traditional education and eventually found my way back to the
-							classroom.
+							{isDanish ? "Min vej dertil var ikke særlig lige. Jeg gik på cirkusskole, tog nogle omveje og fandt til sidst tilbage til klasselokalet." : "My way there wasn’t particularly straight. I went to circus school, took a few detours and eventually found my way back to the classroom."}
 						</p>
 
 						<p>
-							This talk is about that slightly messy road — but also about adventure,
-							travelling and what can happen when curiosity becomes more important
-							than the fear of getting things wrong.
+							{isDanish ? "Foredraget handler om den lidt rodede vej dertil, men også om eventyr, rejser og det, der kan ske, når nysgerrigheden bliver vigtigere end frygten for at fejle." : "This talk is about that slightly messy road, but also about adventure, travelling and what can happen when curiosity becomes more important than the fear of failure."}
 						</p>
 
 						<p>
-							Whether that means going back to school, travelling alone somewhere unfamiliar
-							or simply trying something you are not sure you can do, the point is not to stop
-							being afraid of failure — but to become curious enough to try anyway.
+							{isDanish ? "Uanset om det betyder at vende tilbage til skolen, rejse alene til et sted, man ikke kender, eller bare prøve noget, man ikke er sikker på, man kan, handler det ikke om ikke at være bange for at fejle. Det handler om at være nysgerrig nok til at prøve alligevel." : "Whether that means going back to school, travelling alone somewhere unfamiliar or simply trying something you are not sure you can do, it is not about no longer being afraid to fail. It is about being curious enough to try anyway."}
 						</p>
 
 						<p>
-							The talk can be adapted to the age of the students and the setting.
+							{isDanish ? "Foredraget kan tilpasses elevernes alder og rammerne." : "The talk can be adapted to the age of the students and the setting."}
 						</p>
 
 					<p class="good-for">
-						<strong>Good for:</strong> schools, youth programmes, universities,
-						folk high schools and other educational settings.
+						<strong>{isDanish ? "Passer til:" : "Good for:"}</strong> {isDanish ? "skoler, ungdomsuddannelser, universiteter, højskoler og andre uddannelsesmiljøer." : "schools, youth programmes, universities, folk high schools and other educational settings."}
 					</p>
 					</div>
 				</article>
@@ -126,10 +109,9 @@ import SiteFooter from "../components/SiteFooter.astro";
 			</section>
 
 			<section class="experience">
-				<p class="label">EXPERIENCE</p>
+				<p class="label">{isDanish ? "ERFARING" : "EXPERIENCE"}</p>
 				<p>
-					I’ve spoken to audiences ranging from efterskole students to PhD students,
-					as well as at libraries and public events.
+					{isDanish ? "Jeg har holdt foredrag for alt fra efterskoleelever til ph.d.-studerende samt på biblioteker og ved offentlige arrangementer." : "I’ve spoken to audiences ranging from efterskole students to PhD students, as well as at libraries and public events."}
 				</p>
 			</section>
 
@@ -137,31 +119,31 @@ import SiteFooter from "../components/SiteFooter.astro";
 			<section class="details">
 				<div>
 					<p class="label">FORMAT</p>
-					<p>Talk, break and Q&A</p>
+					<p>{isDanish ? "Foredrag, pause og spørgsmål" : "Talk, break and Q&A"}</p>
 				</div>
 
 				<div>
-					<p class="label">LANGUAGE</p>
-					<p>Danish or English</p>
+					<p class="label">{isDanish ? "SPROG" : "LANGUAGE"}</p>
+					<p>{isDanish ? "Dansk eller engelsk" : "Danish or English"}</p>
 				</div>
 
 				<div>
-					<p class="label">CUSTOM</p>
-					<p>Both talks can be adapted to the audience and event.</p>
+					<p class="label">{isDanish ? "TILPASNING" : "CUSTOM"}</p>
+					<p>{isDanish ? "Begge foredrag kan tilpasses publikum og arrangement." : "Both talks can be adapted to the audience and event."}</p>
 				</div>
 			</section>
 
 
 			<section class="booking">
-				<p class="label">BOOK A TALK</p>
+				<p class="label">{isDanish ? "BOOK ET FOREDRAG" : "BOOK A TALK"}</p>
 
-				<h2>Interested in booking a talk?</h2>
+				<h2>{isDanish ? "Interesseret i at booke et foredrag?" : "Interested in booking a talk?"}</h2>
 
 				<p>
-					Send me a message with a little about the audience, the event and which talk you are interested in.
+					{isDanish ? "Send mig en besked med lidt om publikum, arrangementet og hvilket foredrag du er interesseret i." : "Send me a message with a little about the audience, the event and which talk you are interested in."}
 				</p>
 
-				<a href="mailto:oliviasloth@hotmail.com">Get in touch →</a>
+				<a href="mailto:oliviasloth@hotmail.com">{isDanish ? "Kontakt mig →" : "Get in touch →"}</a>
 			</section>
 		</main>
 		<SiteFooter />

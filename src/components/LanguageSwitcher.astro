@@ -1,0 +1,80 @@
+---
+interface Props {
+	light?: boolean;
+}
+
+const { light = false } = Astro.props;
+const path = Astro.url.pathname;
+const isDanish = Astro.currentLocale === "da" || path === "/da" || path.startsWith("/da/");
+const localePath = path.replace(/^\/da(?=\/|$)/, "") || "/";
+const englishPath = localePath;
+const danishPath = `/da${localePath === "/" ? "/" : localePath}`;
+---
+
+<nav class:list={["language-switcher", { light }]} aria-label={isDanish ? "Vælg sprog" : "Choose language"}>
+	<a
+		href={danishPath}
+		class:list={{ active: isDanish }}
+		lang="da"
+		hreflang="da"
+		aria-label="Dansk"
+		title="Dansk"
+	>
+		<span aria-hidden="true">🇩🇰</span>
+		<span class="language-code">DA</span>
+	</a>
+	<a
+		href={englishPath}
+		class:list={{ active: !isDanish }}
+		lang="en"
+		hreflang="en"
+		aria-label="English"
+		title="English"
+	>
+		<span aria-hidden="true">🇬🇧</span>
+		<span class="language-code">EN</span>
+	</a>
+</nav>
+
+<style>
+	.language-switcher {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		margin-left: 22px;
+		font-family: Arial, sans-serif;
+	}
+
+	.language-switcher a {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		padding: 5px 7px;
+		border: 1px solid transparent;
+		border-radius: 999px;
+		color: #171717;
+		font-size: 12px;
+		line-height: 1;
+		text-decoration: none;
+		opacity: 0.58;
+	}
+
+	.language-switcher a.active {
+		border-color: currentColor;
+		opacity: 1;
+	}
+
+	.language-switcher.light a {
+		color: #fff;
+	}
+
+	@media (max-width: 800px) {
+		.language-switcher {
+			margin-left: 8px;
+		}
+
+		.language-code {
+			display: none;
+		}
+	}
+</style>

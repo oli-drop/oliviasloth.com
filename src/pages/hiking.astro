@@ -1,16 +1,19 @@
 ---
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+
+const isDanish = Astro.currentLocale === "da";
+const localize = (path: string) => isDanish ? `/da${path}` : path;
 ---
 
-<html lang="en">
+<html lang={isDanish ? "da" : "en"}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" sizes="256x256" href="/favicon-original-tent-close.png?v=7" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=7" />
-		<title>Hiking — Olivia Fjord Sloth</title>
-		<meta name="description" content="Trail notes, routes, planning and practical lessons from Olivia Fjord Sloth’s hikes." />
+		<title>{isDanish ? "Vandring — Olivia Fjord Sloth" : "Hiking — Olivia Fjord Sloth"}</title>
+		<meta name="description" content={isDanish ? "Vandrenoter, ruter, planlægning og praktiske erfaringer fra Olivia Fjord Sloths ture." : "Trail notes, routes, planning and practical lessons from Olivia Fjord Sloth’s hikes."} />
 	</head>
 
 	<body>
@@ -19,69 +22,65 @@ import SiteFooter from "../components/SiteFooter.astro";
 		<main>
 
 			<section class="hero">
-				<p class="eyebrow">NOTES FROM THE TRAIL</p>
+				<p class="eyebrow">{isDanish ? "NOTER FRA STIEN" : "NOTES FROM THE TRAIL"}</p>
 
-				<h1>Notes from the trail.</h1>
+				<h1>{isDanish ? "Noter fra stien." : "Notes from the trail."}</h1>
 
 				<p class="intro">
-					Routes I’ve walked, GPX files, food, planning and the things
-					I’ve learned by actually being out there.
+					{isDanish ? "Ruter jeg har vandret, GPX-filer, mad, planlægning og det, jeg har lært ved faktisk at være derude." : "Routes I’ve walked, GPX files, food, planning and the things I’ve learned by actually being out there."}
 				</p>
 			</section>
 
 
 			<section class="guide-grid">
 
-				<a class="guide-card" href="/hiking/trails">
+				<a class="guide-card" href={localize("/hiking/trails")}>
 					<img src="/hiking/kurdistan.webp" alt="Mountain hiking trail" loading="lazy" decoding="async" />
 
 					<div class="guide-content">
-						<p class="label">ROUTES</p>
-						<h2>Trails I’ve walked</h2>
+						<p class="label">{isDanish ? "RUTER" : "ROUTES"}</p>
+						<h2>{isDanish ? "Stier jeg har vandret" : "Trails I’ve walked"}</h2>
 						<p>
-							Routes, GPX files and my own notes from hikes in places
-							like Kyrgyzstan, Tajikistan and Iran.
+							{isDanish ? "Ruter, GPX-filer og mine egne noter fra vandringer i blandt andet Kirgisistan, Tadsjikistan og Iran." : "Routes, GPX files and my own notes from hikes in places like Kyrgyzstan, Tajikistan and Iran."}
 						</p>
-						<span>Explore trails →</span>
+						<span>{isDanish ? "Udforsk ruter →" : "Explore trails →"}</span>
 					</div>
 				</a>
 
 
-				<a class="guide-card" href="/hiking/food">
+				<a class="guide-card" href={localize("/hiking/food")}>
 					<div class="card-image">
 						<img src="/hiking/food.jpg" alt="Food for hiking" loading="lazy" decoding="async" />
-						<span class="coming-soon-label">COMING SOON</span>
+						<span class="coming-soon-label">{isDanish ? "KOMMER SNART" : "COMING SOON"}</span>
 					</div>
 
 					<div class="guide-content">
-						<p class="label">TRAIL FOOD</p>
-						<h2>What I eat on long hikes</h2>
+						<p class="label">{isDanish ? "MAD PÅ TUREN" : "TRAIL FOOD"}</p>
+						<h2>{isDanish ? "Hvad jeg spiser på lange vandringer" : "What I eat on long hikes"}</h2>
 						<p>
-							Dehydrated meals, what works for me and what I actually
-							carry when I’m out for several days.
+							{isDanish ? "Tørret mad, hvad der fungerer for mig, og hvad jeg faktisk bærer med, når jeg er ude i flere dage." : "Dehydrated meals, what works for me and what I actually carry when I’m out for several days."}
 						</p>
-						<span>Trail food →</span>
+						<span>{isDanish ? "Mad på turen →" : "Trail food →"}</span>
 					</div>
 				</a>
 
 
-				<a class="guide-card" href="/hiking/planning">
+				<a class="guide-card" href={localize("/hiking/planning")}>
 					<div class="card-image">
 						<img src="/hiking/planing.jpg" alt="Map and hiking planning" loading="lazy" decoding="async" />
-						<span class="coming-soon-label">COMING SOON</span>
+						<span class="coming-soon-label">{isDanish ? "KOMMER SNART" : "COMING SOON"}</span>
 					</div>
 
 					<div class="guide-content">
-                        <p class="label">PLANNING & GEAR</p>
+                        <p class="label">{isDanish ? "PLANLÆGNING & UDSTYR" : "PLANNING & GEAR"}</p>
 
-                        <h2>Things I wish I knew</h2>
+                        <h2>{isDanish ? "Ting jeg ville ønske, jeg vidste" : "Things I wish I knew"}</h2>
 
                         <p>
-                            Gear, packing, planning and some of the things
-                            I learned the slow way.
+                            {isDanish ? "Udstyr, pakning, planlægning og nogle af de ting, jeg lærte på den langsomme måde." : "Gear, packing, planning and some of the things I learned the slow way."}
                         </p>
 
-                        <span>Read my notes →</span>
+                        <span>{isDanish ? "Læs mine noter →" : "Read my notes →"}</span>
 					</div>
 				</a>
 

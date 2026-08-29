@@ -1,16 +1,18 @@
 ---
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+
+const isDanish = Astro.currentLocale === "da";
 ---
 
-<html lang="en">
+<html lang={isDanish ? "da" : "en"}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" sizes="256x256" href="/favicon-original-tent-close.png?v=7" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=7" />
-		<title>About — Olivia Fjord Sloth</title>
-		<meta name="description" content="Meet Olivia Fjord Sloth: physicist, adventurer, speaker and long-distance hiker." />
+		<title>{isDanish ? "Om mig — Olivia Fjord Sloth" : "About — Olivia Fjord Sloth"}</title>
+		<meta name="description" content={isDanish ? "Mød Olivia Fjord Sloth: fysiker, eventyrer, foredragsholder og langdistancevandrer." : "Meet Olivia Fjord Sloth: physicist, adventurer, speaker and long-distance hiker."} />
 	</head>
 
 	<body>
@@ -25,20 +27,17 @@ import SiteFooter from "../components/SiteFooter.astro";
 			<section class="intro">
 
 				<div class="intro-text">
-					<p class="eyebrow">A LITTLE ABOUT ME</p>
+					<p class="eyebrow">{isDanish ? "LIDT OM MIG" : "A LITTLE ABOUT ME"}</p>
 
-					<h1>Hi, I’m Olivia.</h1>
+					<h1>{isDanish ? "Hej, jeg er Olivia." : "Hi, I’m Olivia."}</h1>
 
 					<p class="lead">
-                        I have a PhD in physics, and I think the researcher in me has followed
-                        me into the way I travel. I ask a lot of questions. I don’t always find
-                        particularly good answers, but I usually come home questioning something
-                        I thought I knew before I left.
+                        {isDanish ? "Jeg har en ph.d. i fysik, og jeg tror egentlig, at forskeren i mig er fulgt med på mine rejser. Jeg stiller mange spørgsmål. Jeg finder ikke altid særlig gode svar, men jeg kommer som regel hjem og stiller spørgsmålstegn ved noget, jeg troede, jeg vidste, før jeg tog afsted." : "I have a PhD in physics, and I think the researcher in me has followed me into the way I travel. I ask a lot of questions. I don’t always find particularly good answers, but I usually come home questioning something I thought I knew before I left."}
 					</p>
 				</div>
 
 				<div class="intro-image">
-					<img src="/tur2.webp" alt="Olivia Fjord Sloth in the mountains" decoding="async" />
+					<img src="/olivia-physics-lab.jpg" alt={isDanish ? "Olivia Fjord Sloth arbejder i fysiklaboratoriet" : "Olivia Fjord Sloth working in the physics laboratory"} decoding="async" />
 				</div>
 
 			</section>
@@ -47,88 +46,78 @@ import SiteFooter from "../components/SiteFooter.astro";
 
             <section class="story">
 
-                <p class="eyebrow">HOW THIS STARTED</p>
+                <p class="eyebrow">{isDanish ? "HVORDAN DET BEGYNDTE" : "HOW THIS STARTED"}</p>
 
                 <div class="story-text">
 
                     <p>
-                        My name is Olivia, and I’m an adventurer. It took me quite a long
-                        time to realise that.
+                        {isDanish ? "Jeg er eventyrer. Det tog mig lang tid at finde ud af, at jeg kunne bruge lige netop det ord om mig selv." : "I’m an adventurer. It took me a long time to realise that I could actually use that word about myself."}
                     </p>
 
                     <p>
-                        For years, I didn’t really understand what kept pulling me towards
-                        things that were difficult, unknown or maybe a little unlikely.
-                        I’m dyslexic and somehow ended up with a PhD in physics. I’ve trained
-                        for competitions, climbed mountains and travelled to places I knew
-                        very little about.
+                        {isDanish ? "Jeg er ordblind og fik at vide, at jeg ikke kunne gå i gymnasiet, fordi mit engelsk ikke var godt nok. På en eller anden måde endte jeg alligevel med en ph.d. i fysik fra DTU. Vejen dertil var ikke ligefrem lige, og på et tidspunkt gik den blandt andet forbi en cirkusskole." : "I’m dyslexic and was told I couldn’t go to high school because my English wasn’t good enough. Somehow, I ended up with a PhD in physics from DTU. The road there wasn’t exactly straight, and at one point it even took me through circus school."}
                     </p>
 
                     <p>
-                        People have told me a lot of things I couldn’t do. I’ve always wanted
-                        to find out for myself. My first thought is usually: <em>Why not?</em>
-                        Sometimes followed by: <em>Watch me.</em>
+                        {isDanish ? "Jeg har fået at vide mange gange, at der var ting, jeg ikke kunne. Det har som regel bare givet mig endnu mere lyst til selv at finde ud af, om jeg rent faktisk kunne. Min første tanke er ofte:" : "I’ve been told many times that there were things I couldn’t do. Usually, that just made me want to find out for myself if I actually could. My first thought is often:"} <em>{isDanish ? "Hvorfor ikke?" : "Why not?"}</em>
+                        {isDanish ? " Nogle gange efterfulgt af:" : " Sometimes followed by:"} <em>{isDanish ? "Jeg giver det lige et forsøg." : "I’ll give it a try."}</em>
                     </p>
 
                     <p>
-                        Finishing my PhD was probably harder for me than climbing Mount Everest.
-                        And when I finally finished, I remember thinking:
-                        <em>And then what?</em>
+                        {isDanish ? "I lang tid tænkte jeg, at eventyrene nok var noget, jeg på et tidspunkt ville vokse fra. Man har sit sabbatår, sine store rejser og sine eventyr, og så bliver man voksen og begynder at være lidt mere fornuftig." : "For a long time, I thought the adventures were probably something I would eventually grow out of. You have your gap year, your big trips and your adventures, and then at some point you grow up and start being a little more sensible."}
                     </p>
 
                     <p>
-                        For a long time, I thought this was something I would grow out of.
-                        You have your adventures, your gap year, your big trips — and then
-                        you come home and start your “real” life.
-                    </p>
-
-                    <p>
-                        Finding the word <em>adventurer</em> gave me a strange kind of calm.
-                        It could hold all of it. And maybe I didn’t have to grow out of it
-                        after all.
+                        {isDanish ? "Men efterhånden er det gået op for mig, at jeg måske ikke behøver at vokse fra det." : "But slowly, I’ve realised that maybe I don’t have to grow out of it."}
                     </p>
 
                 </div>
 
             </section>
 
+			<figure class="about-image">
+				<img src="/olivia-about-people.jpg" alt={isDanish ? "Olivia sammen med mennesker, hun møder på rejsen" : "Olivia with people she meets while travelling"} loading="lazy" decoding="async" />
+			</figure>
+
 
             <!-- WALKING -->
 
             <section class="story">
 
-                <p class="eyebrow">WHY I WALK</p>
+                <p class="eyebrow">{isDanish ? "HVORFOR JEG VANDRER" : "WHY I WALK"}</p>
 
                 <div class="story-text">
 
                     <p>
-                        Walking is probably where I feel most at home in all of this.
+                        {isDanish ? "Jeg tror, jeg føler mig mest hjemme, når jeg vandrer." : "I think I feel most at home when I’m walking."}
                     </p>
 
                     <p>
-                        I’ve walked alone through the mountains of Kyrgyzstan and Tajikistan,
-                        climbed Iran’s highest mountain, 5,610 metres, alone, and hiked and
-                        travelled through Iraqi Kurdistan, Lebanon and Syria.
+                        {isDanish ? "Jeg har vandret alene gennem bjergene i Kirgisistan og Tadsjikistan, besteget Irans højeste bjerg på 5.610 meter og vandret og rejst gennem irakisk Kurdistan, Libanon, Syrien og en hel del andre steder." : "I’ve walked alone through the mountains of Kyrgyzstan and Tajikistan, climbed Iran’s highest mountain at 5,610 metres, and hiked and travelled through Iraqi Kurdistan, Lebanon, Syria and quite a few other places."}
                     </p>
 
                     <p>
-                        There is something about moving through a country using only my own
-                        body. I’m slow and vulnerable, and I can only carry what fits in my
-                        backpack. I don’t go looking for anything in particular. I just walk.
+                        {isDanish ? "Der er noget ved at bevæge sig gennem et land til fods. Det går langsomt. Jeg kan kun have det med, der kan være i min rygsæk, og jeg må tage tingene, som de kommer." : "There is something about moving through a country on foot. It is slow. I can only carry what fits in my backpack, and I have to take things as they come."}
                     </p>
 
                     <p>
-                        And somehow, walking makes some of the differences between people
-                        feel less important.
+                        {isDanish ? "Mit mål er egentlig bare at bevæge mig fra A til B. Jeg kan planlægge en rute og pakke min rygsæk, men resten ved jeg ikke rigtig. Vejret ændrer sig, en flod kan være umulig at krydse, nogen inviterer mig hjem, eller den vej, jeg havde tænkt mig at gå, viser sig slet ikke at være en vej. Så ændrer jeg planen." : "My goal is really just to get from A to B. I can plan a route and pack my backpack, but I don’t really know what will happen in between. The weather changes, a river might be impossible to cross, someone invites me into their home, or the road I was planning to follow turns out not to be a road at all. So I change the plan."}
                     </p>
 
                     <p>
-                        On Damavand in Iran, a woman once told me to take off my headscarf.
-                        <em>“Up here, we are all free.”</em>
+                        {isDanish ? "Og på en eller anden måde bliver nogle af forskellene mellem mennesker mindre vigtige, når man mødes på den måde." : "And somehow, some of the differences between people become less important when you meet this way."}
                     </p>
 
                     <p>
-                        That stayed with me.
+                        {isDanish ? "På Damavand i Iran pegede en kvinde engang på mit tørklæde og sagde, at jeg skulle tage det af." : "On Damavand in Iran, a woman once pointed at my headscarf and told me to take it off."}
+                    </p>
+
+                    <p>
+                        <em>{isDanish ? "“Heroppe i bjergene er vi alle frie.”" : "“Up here in the mountains, we are all free.”"}</em>
+                    </p>
+
+                    <p>
+                        {isDanish ? "Den sætning har jeg tænkt på mange gange siden." : "I’ve thought about that sentence many times since."}
                     </p>
 
                 </div>
@@ -140,38 +129,24 @@ import SiteFooter from "../components/SiteFooter.astro";
 
             <section class="story">
 
-                <p class="eyebrow">THINGS I KEEP WONDERING ABOUT</p>
+                <p class="eyebrow">{isDanish ? "TING JEG BLIVER VED MED AT TÆNKE OVER" : "THINGS I KEEP WONDERING ABOUT"}</p>
 
                 <div class="story-text">
 
                     <p>
-                        I often come home with more questions than answers. If anything,
-                        travelling makes me more curious — about the politics of the places
-                        I visit, about people, but also about myself and the ethics of what I do.
+                        {isDanish ? "Jeg kommer ofte hjem med flere spørgsmål end svar. Mine rejser har gjort mig mere nysgerrig på politikken i de lande, jeg besøger, på de mennesker, jeg møder, men også på mig selv og på etikken i den måde, jeg rejser på." : "I often come home with more questions than answers. Travelling has made me more curious about the politics of the countries I visit, about the people I meet, but also about myself and the ethics of the way I travel."}
                     </p>
 
                     <p>
-                        What risks am I willing to take? What is my role when I enter someone
-                        else’s home, community or country? When am I curious, and when am I
-                        crossing a line?
+                        {isDanish ? "Hvilke risici er jeg villig til at tage? Hvilket ansvar har jeg, når jeg rejser ind i andre menneskers hverdag? Hvornår er jeg nysgerrig, og hvornår går jeg for langt?" : "What risks am I willing to take? What responsibility do I have when I enter other people’s everyday lives? When am I curious, and when am I going too far?"}
                     </p>
 
                     <p>
-                        The people I meet stop being numbers in a headline. They become people
-                        I know. People I care about. There is something beautiful about that,
-                        but also something difficult.
+                        {isDanish ? "Dem, jeg møder, stopper med at være mennesker, jeg kun hører om i nyhederne. De får navne. Nogle møder jeg kun en eftermiddag. Andre ender jeg med at bo hos, vandre med eller komme tilbage og besøge igen og igen. Nogle bliver tætte venner, som jeg holder inderligt af. Jeg giver meget af mig selv, og de giver også meget af sig selv til mig." : "The people I meet stop being people I only hear about in the news. They have names. Some I meet for just an afternoon. Others I end up staying with, hiking with or coming back to visit again and again. Some become close friends who I care deeply about. I give a lot of myself, and they give a lot of themselves to me too."}
                     </p>
 
                     <p>
-                        I’m not a journalist. I’m “just” a hiker. I’m the guest, and that
-                        matters to me. I don’t want to arrive somewhere and decide what the
-                        story is. I want to see what people want to show me and try to
-                        understand what they want me to understand.
-                    </p>
-
-                    <p>
-                        I don’t always know what to do with that afterwards. And maybe that
-                        is why I keep coming home with more questions.
+                        {isDanish ? "Men jeg er ikke journalist. Jeg er “bare” en vandrer. Og først og fremmest er jeg gæst." : "But I’m not a journalist. I’m “just” a hiker. And first of all, I’m a guest."}
                     </p>
 
                 </div>
@@ -223,14 +198,14 @@ import SiteFooter from "../components/SiteFooter.astro";
 
 			<section class="contact">
 
-				<p class="eyebrow">COME SAY HI</p>
+				<p class="eyebrow">{isDanish ? "SIG HEJ" : "COME SAY HI"}</p>
 
 				<h2>
-					Want to work together, book a talk or just say hi?
+					{isDanish ? "Vil du samarbejde, booke et foredrag eller bare sige hej?" : "Want to work together, book a talk or just say hi?"}
 				</h2>
 
 				<a class="contact-link" href="mailto:oliviasloth@hotmail.com">
-					Get in touch →
+					{isDanish ? "Kontakt mig →" : "Get in touch →"}
 				</a>
 
 			</section>
@@ -365,6 +340,18 @@ import SiteFooter from "../components/SiteFooter.astro";
 		line-height: 1.7;
 	}
 
+	.about-image {
+		max-width: 1000px;
+		margin: 0 auto 100px;
+		padding: 0 48px;
+	}
+
+	.about-image img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
 
 	/* FACTS */
 
@@ -487,6 +474,11 @@ import SiteFooter from "../components/SiteFooter.astro";
 
 		.story-text p {
 			font-size: 19px;
+		}
+
+		.about-image {
+			margin-bottom: 90px;
+			padding: 0 24px;
 		}
 
 

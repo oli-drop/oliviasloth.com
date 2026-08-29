@@ -1,16 +1,17 @@
 ---
 import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+const isDanish = Astro.currentLocale === "da";
 ---
 
-<html lang="en">
+<html lang={isDanish ? "da" : "en"}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" sizes="256x256" href="/favicon-original-tent-close.png?v=7" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=7" />
-		<title>Trails I've Walked — Olivia Fjord Sloth</title>
-		<meta name="description" content="Long-distance trails walked by Olivia Fjord Sloth, with route details, GPX files and practical notes." />
+		<title>{isDanish ? "Ruter jeg har vandret — Olivia Fjord Sloth" : "Trails I've Walked — Olivia Fjord Sloth"}</title>
+		<meta name="description" content={isDanish ? "Langdistanceruter vandret af Olivia Fjord Sloth med rutedetaljer, GPX-filer og praktiske noter." : "Long-distance trails walked by Olivia Fjord Sloth, with route details, GPX files and practical notes."} />
 	</head>
 
 	<body>
@@ -24,13 +25,12 @@ import SiteFooter from "../../components/SiteFooter.astro";
 
 			<section class="hero">
 
-				<p class="eyebrow">ROUTES I’VE WALKED</p>
+				<p class="eyebrow">{isDanish ? "RUTER JEG HAR VANDRET" : "ROUTES I’VE WALKED"}</p>
 
-				<h1>Trails I’ve walked.</h1>
+				<h1>{isDanish ? "Stier jeg har vandret." : "Trails I’ve walked."}</h1>
 
 				<p class="intro">
-					Routes I’ve walked, with GPX files, practical notes
-					and things I wish I had known before I went.
+					{isDanish ? "Ruter jeg har vandret med GPX-filer, praktiske noter og ting, jeg ville ønske, jeg havde vidst, før jeg tog af sted." : "Routes I’ve walked, with GPX files, practical notes and things I wish I had known before I went."}
 				</p>
 
 			</section>
@@ -40,7 +40,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 
 			<section class="trails-grid">
 
-				<a class="trail-card" href="/hiking/trails/pamir-trail">
+				<a class="trail-card" href={isDanish ? "/da/hiking/trails/pamir-trail" : "/hiking/trails/pamir-trail"}>
 
 					<div class="trail-image">
 						<img
@@ -54,20 +54,19 @@ import SiteFooter from "../../components/SiteFooter.astro";
 					<div class="trail-info">
 
 						<p class="trail-country">
-							TAJIKISTAN
+							{isDanish ? "TADSJIKISTAN" : "TAJIKISTAN"}
 						</p>
 
 						<h2>Pamir Trail</h2>
 
 						<p class="trail-details">
-							158.5 km · Fann Mountains · highest pass 4,750 m
+							{isDanish ? "158,5 km · Fannbjergene · højeste pas 4.750 m" : "158.5 km · Fann Mountains · highest pass 4,750 m"}
 						</p>
 						<p class="trail-description">
-							The most beautiful hike I have ever done, and quite a bit
-							harder than I expected.
+							{isDanish ? "Den smukkeste vandring, jeg nogensinde har gennemført — og en del hårdere, end jeg forventede." : "The most beautiful hike I have ever done, and quite a bit harder than I expected."}
 						</p>
 
-						<span>View trail →</span>
+						<span>{isDanish ? "Se ruten →" : "View trail →"}</span>
 
 					</div>
 
